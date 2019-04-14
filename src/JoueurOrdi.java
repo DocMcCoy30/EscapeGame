@@ -41,6 +41,11 @@ public class JoueurOrdi extends Joueurs {
         return tabCombiRandom;
     }
 
+    public void modeDev(){
+        if (config.getModeDev()==true){
+            System.out.println("Le code secret est : "+intToString(tabCombiRandom));
+        }
+    }
 }
 
 

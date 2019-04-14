@@ -17,6 +17,7 @@ public class Jeu {
     public void challenger() {
         pc.initNb();
         pc.combi(tabCombiRandom);
+        pc.modeDev();
         while (!pc.conditionsDeSortie()) {
             jh.combi(tabCombiInput);
             pc.indicesResolutionPM(tabCombiInput, tabCombiRandom);
@@ -44,6 +45,7 @@ public class Jeu {
         pc.combi(tabCombiRandom);
         jh.combi(tabCombiInput2);
         pc.combi(tabCombiRandom2);
+        pc.modeDev();
         System.out.println("J'entre ma combinaison");
         while (!jh.conditionsDeSortieDuel(nbBienPlace1, nbBienPlace2)) {
             System.out.println("A vous de trouver ma combinaison");

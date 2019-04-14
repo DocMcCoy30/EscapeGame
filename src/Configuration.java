@@ -40,6 +40,11 @@ public class Configuration {
         return Integer.parseInt(nbEssais);
     }
 
+    public static boolean getModeDev() {
+        String modeDev = rb.getString("modeDev");
+        return Boolean.parseBoolean(modeDev);
+    }
+
     public void affiche() {
         System.out.println("Nombre de cases = " + getNbCases());
         System.out.println("Nombre de chiffres = " + getNbDigits());
