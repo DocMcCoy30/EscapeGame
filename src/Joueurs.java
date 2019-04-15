@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 public abstract class Joueurs {
 
-    Configuration config = new Configuration();
-
     protected ArrayList<Character> tabIndice = new ArrayList<>();
     protected ArrayList<Integer> tabCombiRandom = new ArrayList<>();
     protected ArrayList<Integer> tabCombiInput = new ArrayList<>();
@@ -19,7 +17,7 @@ public abstract class Joueurs {
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
     public void modeDev(ArrayList <Integer> tabCombiRandom){
-        if (config.getModeDev()) System.out.println("Le code secret est : " + intToString(tabCombiRandom));
+        if (Configuration.getModeDev()) System.out.println("Le code secret est : " + intToString(tabCombiRandom));
     }
 
     /**
@@ -31,7 +29,7 @@ public abstract class Joueurs {
     public ArrayList<Character> indicesResolutionPM(ArrayList<Integer> tabAttaquant, ArrayList<Integer> tabDefenseur) {
         char indice;
         tabIndice.clear();
-        for (int i = 0; i < config.getNbCases(); i++) {
+        for (int i = 0; i < Configuration.getNbCases(); i++) {
             if (tabAttaquant.get(i) > tabDefenseur.get(i)) {
                 indice = '-';
                 tabIndice.add(indice);
@@ -56,13 +54,13 @@ public abstract class Joueurs {
      */
     public boolean conditionsDeSortie() {
         endOfGame = false;
-        if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
+        if ((nbBienPlace != Configuration.getNbCases()) && (nbDeCoups < Configuration.getNbEssais())) {
             nbDeCoups++;
             System.out.println("Essai n°" + nbDeCoups);
-        } else if ((nbBienPlace == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
+        } else if ((nbBienPlace == Configuration.getNbCases()) && (nbDeCoups <= Configuration.getNbEssais())) {
             System.out.println("Victoire en " + nbDeCoups + " coup !");
             endOfGame = true;
-        } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
+        } else if ((nbBienPlace != Configuration.getNbCases()) && (nbDeCoups >= Configuration.getNbEssais())) {
             System.out.println("Nombre maximum d'essais atteints.");
             System.out.println();
             endOfGame = true;
@@ -80,21 +78,21 @@ public abstract class Joueurs {
         this.nbBienPlace1 = nbBienPlace1;
         this.nbBienPlace2 = nbBienPlace2;
         endOfGame = false;
-        if (((nbBienPlace1 != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) &&
-                ((nbBienPlace2 != config.getNbCases()) && (nbDeCoups < config.getNbEssais()))) {
+        if (((nbBienPlace1 != Configuration.getNbCases()) && (nbDeCoups < Configuration.getNbEssais())) &&
+                ((nbBienPlace2 != Configuration.getNbCases()) && (nbDeCoups < Configuration.getNbEssais()))) {
             nbDeCoups++;
             System.out.println("Essai n°" + nbDeCoups);
-        } else if ((nbBienPlace1 == config.getNbCases()) && (nbBienPlace2 != config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
+        } else if ((nbBienPlace1 == Configuration.getNbCases()) && (nbBienPlace2 != Configuration.getNbCases()) && (nbDeCoups <= Configuration.getNbEssais())) {
             System.out.println("Victoire en " + nbDeCoups + " coup !");
             endOfGame = true;
-        } else if ((nbBienPlace2 == config.getNbCases()) && (nbBienPlace1 != config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
+        } else if ((nbBienPlace2 == Configuration.getNbCases()) && (nbBienPlace1 != Configuration.getNbCases()) && (nbDeCoups <= Configuration.getNbEssais())) {
             System.out.println("Victoire en " + nbDeCoups + " coup !");
             endOfGame = true;
-        } else if ((nbBienPlace1 == config.getNbCases()) && (nbBienPlace2 == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
+        } else if ((nbBienPlace1 == Configuration.getNbCases()) && (nbBienPlace2 == Configuration.getNbCases()) && (nbDeCoups <= Configuration.getNbEssais())) {
             System.out.println("Match Nul !");
             System.out.println();
             endOfGame = true;
-        } else if ((nbBienPlace1 != config.getNbCases()) && (nbBienPlace2 != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
+        } else if ((nbBienPlace1 != Configuration.getNbCases()) && (nbBienPlace2 != Configuration.getNbCases()) && (nbDeCoups >= Configuration.getNbEssais())) {
             System.out.println("Nombre maximum d'essais atteints.");
             System.out.println();
             endOfGame = true;

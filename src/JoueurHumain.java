@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,11 +14,11 @@ public class JoueurHumain extends Joueurs {
         this.tabCombiInput = tabCombiInput;
         String combinaison;
         tabCombiInput.clear();
-        System.out.println("Votre combinaison de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
+        System.out.println("Votre combinaison de " + Configuration.getNbCases() + " chiffres compris entre 0 et " + Configuration.getNbDigits() + " ?");
         try{
         combinaison = sc.nextLine();
         if (combinaison.equals("")) {
-            System.out.println("Votre combinaison doit contenir " + config.getNbCases() + " chiffres");
+            System.out.println("Votre combinaison doit contenir " + Configuration.getNbCases() + " chiffres");
             tabCombiInput.clear();
             combi(tabCombiInput);
             throw new IllegalArgumentException();
@@ -30,13 +29,13 @@ public class JoueurHumain extends Joueurs {
             tabCombiInput.add(j);
         }
             for (int i = 0; i < tabCombiInput.size(); i++) {
-                if (tabCombiInput.get(i) > config.getNbDigits()) {
-                    System.out.println("Les chiffres de votre combinaison doivent etre compris entre 0 et " + config.getNbDigits());
+                if (tabCombiInput.get(i) > Configuration.getNbDigits()) {
+                    System.out.println("Les chiffres de votre combinaison doivent etre compris entre 0 et " + Configuration.getNbDigits());
                     tabCombiInput.clear();
                     combi(tabCombiInput);
                     throw new IllegalArgumentException();
-                } else if (tabCombiInput.size() != config.getNbCases()) {
-                    System.out.println("Votre combinaison doit contenir " + config.getNbCases() + " chiffres");
+                } else if (tabCombiInput.size() != Configuration.getNbCases()) {
+                    System.out.println("Votre combinaison doit contenir " + Configuration.getNbCases() + " chiffres");
                     tabCombiInput.clear();
                     combi(tabCombiInput);
                     throw new IllegalArgumentException();

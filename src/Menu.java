@@ -18,8 +18,8 @@ public class Menu {
         System.out.println();
         System.out.println("Bienvenue à Escape Game");
         System.out.println();
-        System.out.println("Combinaison secrète de " + config.getNbCases() + " chiffres compris entre 0 et 9");
-        System.out.println("Maximum de coups : " + config.getNbEssais() + ".");
+        System.out.println("Combinaison secrète de " + Configuration.getNbCases() + " chiffres compris entre 0 et 9");
+        System.out.println("Maximum de coups : " + Configuration.getNbEssais() + ".");
         System.out.println();
     }
 
@@ -40,7 +40,7 @@ public class Menu {
             System.out.println("Votre choix ?");
             try {
                 choixMode = sc.nextInt();
-                if (choixMode <= 4 ) {
+                if (choixMode <= 4) {
                     runJeuSelectionne();
                 }
             } catch (InputMismatchException e) {
@@ -109,10 +109,8 @@ public class Menu {
                 } while (choixFin == 1);
                 break;
             case 4:
-                do {
-                    config.affiche();
-                    finChoix();
-                } while (choixFin == 1);
+                config.affiche();
+                modeChoix();
                 break;
         }
     }
