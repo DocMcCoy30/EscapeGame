@@ -26,6 +26,7 @@ public class Menu {
     public void modeMenu() {
         int i;
         String[] modes = {"Challenger", "Defenseur", "Duel", "Info Configuration",};
+        System.out.println("ESCAPE GAME");
         System.out.println();
         for (i = 0; i < modes.length; i++) {
             System.out.println(i + 1 + " - " + modes[i]);
