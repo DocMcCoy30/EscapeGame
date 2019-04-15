@@ -1,12 +1,8 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class JoueurOrdi extends Joueurs {
 
-    Scanner sc = new Scanner(System.in);
-
     private int nbRand;
-
 
     @Override
     public ArrayList<Integer> combi(ArrayList<Integer> tabCombiRandom) {
@@ -18,12 +14,17 @@ public class JoueurOrdi extends Joueurs {
         return tabCombiRandom;
     }
 
-    public int digitRandom(int lower, int higher) {
+    private int digitRandom(int lower, int higher) {
         int random = (int) (Math.random() * (higher - lower)) + lower;
         return random;
     }
 
-
+    /**
+     * effectue une proposition aléatoire après analyse des indices (+/- ou =)
+     * @param tabCombiRandom : tableau de chiffres => nouvelle proposition
+     * @param tabIndice : tableau d'indices après comparaison entre code secret et proposition
+     * @return : nouvelle proposition
+     */
     public ArrayList<Integer> proposition(ArrayList<Integer> tabCombiRandom, ArrayList<Character> tabIndice) {
         this.tabCombiRandom = tabCombiRandom;
         this.tabIndice = tabIndice;
@@ -32,7 +33,7 @@ public class JoueurOrdi extends Joueurs {
                 nbRand = digitRandom(0, tabCombiRandom.get(i));
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '+') {
-                nbRand = digitRandom((tabCombiRandom.get(i) + 1), (config.getNbDigits() + 1));
+                nbRand = digitRandom((tabCombiRandom.get(i) + 1), (Configuration.getNbDigits() + 1));
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '=') {
                 nbBienPlace++;
@@ -41,11 +42,7 @@ public class JoueurOrdi extends Joueurs {
         return tabCombiRandom;
     }
 
-    public void modeDev(ArrayList <Integer> tabCombiRandom){
-        if (config.getModeDev()==true){
-            System.out.println("Le code secret est : "+intToString(tabCombiRandom));
-        }
-    }
+
 }
 
 

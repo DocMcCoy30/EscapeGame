@@ -11,8 +11,7 @@ public class Jeu {
     protected ArrayList<Integer> tabCombiInput = new ArrayList<>();
     protected ArrayList<Integer> tabCombiRandom2 = new ArrayList<>();
     protected ArrayList<Integer> tabCombiInput2 = new ArrayList<>();
-    protected ArrayList<Integer> propoPC = new ArrayList<>();
-    protected int nbBienPlace, nbBienPlace1, nbBienPlace2, nbMalPlace, nbDeCoups;
+    protected int nbBienPlace, nbBienPlace1, nbBienPlace2;
 
     public void challenger() {
         pc.initNb();

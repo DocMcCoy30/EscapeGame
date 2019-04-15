@@ -48,6 +48,11 @@ public class JoueurHumain extends Joueurs {
         return tabCombiInput;
     }
 
+    /**
+     * affiche le code secret et la proposition du PC pour analyse
+     * @param tabCombiInput : code secret Joueur Humain
+     * @param tabCombiRandom : proposition PC
+     */
     public void validationIndices(ArrayList<Integer> tabCombiInput, ArrayList<Integer> tabCombiRandom) {
         this.tabCombiInput = tabCombiInput;
         this.tabCombiRandom = tabCombiRandom;
@@ -67,6 +72,9 @@ public class JoueurHumain extends Joueurs {
 
     }
 
+    /**
+     * Demande de validation après analyse automatisée
+     */
     public void validationIndices2() {
         try {
             System.out.println("Tapez enter pour valider");
