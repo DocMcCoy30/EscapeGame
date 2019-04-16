@@ -4,51 +4,86 @@ import java.io.IOException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+/**
+ *
+ */
 public class Configuration {
 
-    static ResourceBundle rb;
-    FileInputStream fis;
+    private ResourceBundle rb;
+    private FileInputStream fis;
+    private Integer nbCases;
+    private Integer nbDigits;
+    private Integer nbEssais;
+    private Boolean modeDev;
 
-    {
+    /**
+     *
+     * @throws IOException
+     */
+    public Configuration() throws IOException {
         try {
             fis = new FileInputStream("./resources/config.properties");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    {
         try {
             rb = new PropertyResourceBundle(fis);
+            this.nbCases = Integer.parseInt(rb.getString("nbCases"));
+            this.nbDigits = Integer.parseInt(rb.getString("nbDigits"));
+            this.nbEssais = Integer.parseInt(rb.getString("nbEssais"));
+            this.modeDev = Boolean.parseBoolean(rb.getString("modeDev"));
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            fis.close();
         }
     }
 
-    public static int getNbCases() {
-        String nbCases = rb.getString("nbCases");
-        return Integer.parseInt(nbCases);
+    /**
+     *
+     * @return
+     */
+    public int getNbCases() {
+        return this.nbCases;
     }
 
-    public static int getNbDigits() {
-        String nbDigits = rb.getString("nbDigits");
-        return Integer.parseInt(nbDigits);
+    /**
+     *
+     * @return
+     */
+    public int getNbDigits() {
+        return this.nbDigits;
     }
 
-    public static int getNbEssais() {
-        String nbEssais = rb.getString("nbEssais");
-        return Integer.parseInt(nbEssais);
+    /**
+     *
+     * @return
+     */
+    public int getNbEssais() {
+        return this.nbEssais;
     }
 
-    public static boolean getModeDev() {
-        String modeDev = rb.getString("modeDev");
-        return Boolean.parseBoolean(modeDev);
+    /**
+     *
+     * @return
+     */
+    public boolean getModeDev() {
+        return this.modeDev;
     }
 
+    /**
+     * 
+     */
     public void affiche() {
         System.out.println("Nombre de cases = " + getNbCases());
         System.out.println("Nombre de chiffres = " + getNbDigits());
         System.out.println("Nombre d'essais = " + getNbEssais());
+        if (getModeDev()) {
+            System.out.println("Mode Developpeur activé");
+        } else {
+            System.out.println("Mode Developpeur désactivé");
+        }
+        System.out.println();
     }
 
 }

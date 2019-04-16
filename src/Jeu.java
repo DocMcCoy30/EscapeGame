@@ -2,8 +2,9 @@ import java.util.ArrayList;
 
 public class Jeu {
 
-    JoueurHumain jh = new JoueurHumain();
-    JoueurOrdi pc = new JoueurOrdi();
+    Configuration config;
+    JoueurHumain jh;
+    JoueurOrdi pc;
 
     protected ArrayList<Character> tabIndice = new ArrayList<>();
     protected ArrayList<Character> tabIndice2 = new ArrayList<>();
@@ -12,6 +13,12 @@ public class Jeu {
     protected ArrayList<Integer> tabCombiRandom2 = new ArrayList<>();
     protected ArrayList<Integer> tabCombiInput2 = new ArrayList<>();
     protected int nbBienPlace, nbBienPlace1, nbBienPlace2;
+
+    public Jeu(Configuration config) {
+        this.config = config;
+        jh = new JoueurHumain(config);
+        pc = new JoueurOrdi(config);
+    }
 
     public void challenger() {
         pc.initNb();

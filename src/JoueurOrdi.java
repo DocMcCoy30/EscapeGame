@@ -2,12 +2,16 @@ import java.util.ArrayList;
 
 public class JoueurOrdi extends Joueurs {
 
+    public JoueurOrdi(Configuration config) {
+        super(config);
+    }
+    
     @Override
     public ArrayList<Integer> combi(ArrayList<Integer> tabCombiRandom) {
         this.tabCombiRandom = tabCombiRandom;
         tabCombiRandom.clear();
-        for (int i = 0; i < Configuration.getNbCases(); i++) {
-            tabCombiRandom.add(i, digitRandom(0, Configuration.getNbDigits()));
+        for (int i = 0; i < config.getNbCases(); i++) {
+            tabCombiRandom.add(i, digitRandom(0, config.getNbDigits()));
         }
         return tabCombiRandom;
     }
@@ -32,7 +36,7 @@ public class JoueurOrdi extends Joueurs {
                 nbRand = digitRandom(0, tabCombiRandom.get(i));
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '+') {
-                nbRand = digitRandom((tabCombiRandom.get(i) + 1), (Configuration.getNbDigits() + 1));
+                nbRand = digitRandom((tabCombiRandom.get(i) + 1), (config.getNbDigits() + 1));
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '=') {
                 nbBienPlace++;

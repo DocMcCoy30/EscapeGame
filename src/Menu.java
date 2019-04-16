@@ -1,25 +1,33 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
 
     Scanner sc = new Scanner(System.in);
-    Configuration config = new Configuration();
+    Configuration config;
     final static Logger log = LogManager.getLogger();
 
     private int choixMode, choixFin;
     private String mode;
 
+    public Menu() {
+        try {
+            config = new Configuration();
+        } catch (IOException e){
+            log.error("ouverture du FIS ne s'est pas déroulé..");
+        }
+    }
 
     public void presentationJeux() {
         System.out.println();
         System.out.println("Bienvenue à Escape Game");
         System.out.println();
-        System.out.println("Combinaison secrète de " + Configuration.getNbCases() + " chiffres compris entre 0 et 9");
-        System.out.println("Maximum de coups : " + Configuration.getNbEssais() + ".");
+        System.out.println("Combinaison secrète de " + config.getNbCases() + " chiffres compris entre 0 et 9");
+        System.out.println("Maximum de coups : " + config.getNbEssais() + ".");
         System.out.println();
     }
 
@@ -85,7 +93,7 @@ public class Menu {
 
 
     public void runJeuSelectionne() {
-        Jeu jeu = new Jeu();
+        Jeu jeu = new Jeu(config);
         switch (choixMode) {
             case 1:
                 do {
