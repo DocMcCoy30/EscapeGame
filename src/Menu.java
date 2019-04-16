@@ -12,13 +12,12 @@ public class Menu {
     final static Logger log = LogManager.getLogger();
 
     private int choixMode, choixFin;
-    private String mode;
 
     public Menu() {
         try {
             config = new Configuration();
         } catch (IOException e){
-            log.error("ouverture du FIS ne s'est pas déroulé..");
+            log.error("L'ouverture du Flux ne s'est pas déroulée comme prévu.");
         }
     }
 

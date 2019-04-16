@@ -17,7 +17,7 @@ public class Configuration {
     private Boolean modeDev;
 
     /**
-     *
+     * ouvre un flux, récupère les données du fichier config.properties et ferme le flux
      * @throws IOException
      */
     public Configuration() throws IOException {
@@ -72,7 +72,7 @@ public class Configuration {
     }
 
     /**
-     * 
+     * affiche les données de configuration du jeu
      */
     public void affiche() {
         System.out.println("Nombre de cases = " + getNbCases());

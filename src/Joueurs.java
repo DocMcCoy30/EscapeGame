@@ -15,8 +15,8 @@ public abstract class Joueurs {
     }
     
     /**
-     * Détermination d'une combinaison (définie dans classes filles : Random pour PC, Scanner pour Joueur Humain)
-     * @param tabCombi
+     * Détermination d'une combinaison (définie dans classes filles (Random pour JoueurOrdi, Scanner pour JoueurHumain)
+     * @param tabCombi : combinaison dans un tableau de chiffre
      * @return
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
@@ -110,6 +110,10 @@ public abstract class Joueurs {
         nbDeCoups = 0;
     }
 
+    /**
+     * récupère le nombre de chiffres bien placés après analyse des indices
+     * @return : nombre de chiffres bien placés
+     */
     public int getNbBienPlace() {
         nbBienPlace = 0;
         for (int i = 0; i < tabIndice.size(); i++) {
@@ -118,7 +122,11 @@ public abstract class Joueurs {
         return nbBienPlace;
     }
 
-
+    /**
+     * tranforme un tableau de chiffre en String
+     * @param tableau
+     * @return
+     */
     public String intToString(ArrayList<Integer> tableau) {
         ArrayList<String> intToString = new ArrayList<>();
         for (Integer n : tableau) {

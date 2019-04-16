@@ -16,6 +16,12 @@ public class JoueurOrdi extends Joueurs {
         return tabCombiRandom;
     }
 
+    /**
+     * Determine un chiffre aléatoire compris entre deux bornes
+     * @param lower  : borne basse
+     * @param higher : borne haute
+     * @return : chiffre aléatoire
+     */
     private int digitRandom(int lower, int higher) {
         int random = (int) (Math.random() * (higher - lower)) + lower;
         return random;
