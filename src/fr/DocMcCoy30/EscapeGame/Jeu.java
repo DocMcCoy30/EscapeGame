@@ -1,3 +1,5 @@
+package fr.DocMcCoy30.EscapeGame;
+
 import java.util.ArrayList;
 
 public class Jeu {

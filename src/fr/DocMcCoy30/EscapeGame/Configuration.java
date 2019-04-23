@@ -1,3 +1,5 @@
+package fr.DocMcCoy30.EscapeGame;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -69,6 +71,14 @@ public class Configuration {
      */
     public boolean getModeDev() {
         return this.modeDev;
+    }
+
+    /**
+     *
+     * @param modeDev
+     */
+    public void setModeDev(Boolean modeDev) {
+        this.modeDev = modeDev;
     }
 
     /**

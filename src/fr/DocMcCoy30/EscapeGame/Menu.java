@@ -1,3 +1,5 @@
+package fr.DocMcCoy30.EscapeGame;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.IOException;
@@ -12,9 +14,12 @@ public class Menu {
 
     private int choixMode, choixFin;
 
-    public Menu() {
+    public Menu(boolean modeDev) {
         try {
             config = new Configuration();
+            if (modeDev) {
+                config.setModeDev(true);
+            }
         } catch (IOException e){
             log.error("L'ouverture du Flux ne s'est pas déroulée comme prévu.");
         }
@@ -31,7 +36,7 @@ public class Menu {
 
     public void modeMenu() {
         int i;
-        String[] modes = {"Challenger", "Defenseur", "Duel", "Info Configuration",};
+        String[] modes = {"Challenger", "Defenseur", "Duel", "Info fr.DocMcCoy30.EscapeGame.Configuration",};
         System.out.println("ESCAPE GAME");
         System.out.println();
         for (i = 0; i < modes.length; i++) {
@@ -62,7 +67,7 @@ public class Menu {
     public void finMenu() {
         System.out.println("Que souhaitez vous faire ?");
         System.out.println("1 - Rejouer");
-        System.out.println("2 - Retour au Menu");
+        System.out.println("2 - Retour au fr.DocMcCoy30.EscapeGame.Menu");
         System.out.println("3 - Quitter");
     }
 

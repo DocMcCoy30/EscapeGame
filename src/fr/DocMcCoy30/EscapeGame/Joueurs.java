@@ -1,3 +1,5 @@
+package fr.DocMcCoy30.EscapeGame;
+
 import java.util.ArrayList;
 
 public abstract class Joueurs {
@@ -15,7 +17,7 @@ public abstract class Joueurs {
     }
     
     /**
-     * Détermination d'une combinaison (définie dans classes filles (Random pour JoueurOrdi, Scanner pour JoueurHumain)
+     * Détermination d'une combinaison (définie dans classes filles (Random pour fr.DocMcCoy30.EscapeGame.JoueurOrdi, Scanner pour fr.DocMcCoy30.EscapeGame.JoueurHumain)
      * @param tabCombi : combinaison dans un tableau de chiffre
      * @return
      */
