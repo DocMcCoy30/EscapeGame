@@ -5,8 +5,8 @@ public class EscapeGame {
     /**
      * Attribut static pour pouvoir être utilisé dans une méthode statis
      */
-    public static void main(String[] args){
-                /**
+    public static void main(String[] args) {
+        /**
          * Utilisation d'un tableau => Il faut préciser l'indice
          * On ouvre toujours les accolades pour indiquer un bloc d'instruction même si il n'y en a qu'une.
          */
