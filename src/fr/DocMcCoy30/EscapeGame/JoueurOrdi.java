@@ -79,8 +79,8 @@ public class JoueurOrdi extends Joueurs {
                 nbRand = digitRandom(tabBornes.get(i).getBorneMin(), tabBornes.get(i).getBorneMax());
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '+') {
-                tabBornes.get(i).setBorneMin(tabCombiRandom.get(i));
-                nbRand = digitRandom(tabBornes.get(i).getBorneMin()+1, tabBornes.get(i).getBorneMax());
+                tabBornes.get(i).setBorneMin(tabCombiRandom.get(i)+1);
+                nbRand = digitRandom(tabBornes.get(i).getBorneMin(), tabBornes.get(i).getBorneMax());
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '=') {
                 nbBienPlace++;

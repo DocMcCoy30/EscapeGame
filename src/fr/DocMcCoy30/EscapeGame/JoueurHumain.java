@@ -20,7 +20,6 @@ public class JoueurHumain extends Joueurs {
         this.tabCombiInput = tabCombiInput;
         String combinaison;
         tabCombiInput.clear();
-        System.out.println("Votre combinaison de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
         try{
         combinaison = sc.nextLine();
         if (combinaison.equals("")) {
@@ -53,12 +52,17 @@ public class JoueurHumain extends Joueurs {
         return tabCombiInput;
     }
 
+    public void propositionInitiale (){
+        System.out.println("Votre combinaison de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
+    }
+
+
     /**
      * affiche le code secret et la proposition du PC pour analyse
      * @param tabCombiInput : code secret Joueur Humain
      * @param tabCombiRandom : proposition PC
      */
-    public void validationIndices(ArrayList<Integer> tabCombiInput, ArrayList<Integer> tabCombiRandom) {
+    public void affichePropositions(ArrayList<Integer> tabCombiInput, ArrayList<Integer> tabCombiRandom) {
         this.tabCombiInput = tabCombiInput;
         this.tabCombiRandom = tabCombiRandom;
         String str1 = "";
@@ -67,20 +71,19 @@ public class JoueurHumain extends Joueurs {
             int nums = tabCombiInput.get(i);
             str1 += nums;
         }
-        System.out.println(str1 + " --> Votre combinaison");
+        System.out.println( "Votre combinaison -> "+str1);
         for (int i = 0; i < tabCombiRandom.size(); i++) {
             int nums2 = tabCombiRandom.get(i);
             str2 += nums2;
         }
-        System.out.println(str2 + " --> Ma proposition");
-        System.out.println("Résultat ? (-, +, ou =)");
-
+        System.out.println("Ma proposition    -> " + str2);
+        System.out.print("Réponse           -> ");
     }
 
     /**
      * Demande de validation après analyse automatisée
      */
-    public void validationIndices2() {
+    public void validationIndices() {
         try {
             System.out.println("Tapez enter pour valider");
             sc.nextLine();

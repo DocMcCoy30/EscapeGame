@@ -69,20 +69,25 @@ public class Menu {
         System.out.println("Que souhaitez vous faire ?");
         System.out.println("1 - Rejouer");
         System.out.println("2 - Retour au Menu");
+        System.out.println("3 - Quitter");
+
     }
 
 
     public int finChoix() {
         choixFin = 0;
-        while (choixFin <= 0 || choixFin > 2) {
+        while (choixFin <= 0 || choixFin > 3) {
             finMenu();
-            System.out.println("Votre choix (1 ou 2)");
+            System.out.println("Votre choix ?");
             try {
                 choixFin = sc.nextInt();
                 /*if (choixFin == 1) {
                     modeChoix();
-                } else/*/if (choixFin == 2) {
+                } else/*/
+                if (choixFin == 2) {
                     modeChoix();
+                }else if (choixFin == 3) {
+                    System.out.println("Merci d'avoir jouer. A bientôt.");
                 }
             } catch (InputMismatchException e) {
                 log.warn("Saisie choixFin non valide.");
