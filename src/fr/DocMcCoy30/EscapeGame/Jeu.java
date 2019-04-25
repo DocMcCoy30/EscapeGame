@@ -83,7 +83,7 @@ public class Jeu {
 
         pc.modeDev(tabCombiRandom);
 
-        while (!pc.conditionsDeSortieDuel(nbBienPlace1, nbBienPlace2)) {
+        while (!jh.conditionsDeSortieDuel(nbBienPlace1, nbBienPlace2)) {
 
             System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);

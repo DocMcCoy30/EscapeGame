@@ -26,17 +26,8 @@ public abstract class Joueurs {
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
-    //public abstract ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi);
-//
-    //public abstract ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice);
-//
-    //public abstract void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice);
 
-
-
-
-
-        public void modeDev(ArrayList<Integer> tabCombiRandom) {
+    public void modeDev(ArrayList<Integer> tabCombiRandom) {
         if (config.getModeDev()) System.out.println("Le code secret est : " + intToString(tabCombiRandom));
     }
 
@@ -54,15 +45,12 @@ public abstract class Joueurs {
             if (tabAttaquant.get(i) > tabDefenseur.get(i)) {
                 indice = '-';
                 tabIndice.add(indice);
-                //System.out.print(indice);
             } else if (tabAttaquant.get(i) < tabDefenseur.get(i)) {
                 indice = '+';
                 tabIndice.add(indice);
-                //System.out.print(indice);
             } else if (tabAttaquant.get(i).equals(tabDefenseur.get(i))) {
                 indice = '=';
                 tabIndice.add(indice);
-                //System.out.print(indice);
             }
         }
         return tabIndice;
@@ -74,7 +62,7 @@ public abstract class Joueurs {
      * @return : fin du jeu (true/false) selon que les conditions sont remplies ou non
      */
     public boolean conditionsDeSortie(int nbBienPlace) {
-        this.nbBienPlace=nbBienPlace;
+        this.nbBienPlace = nbBienPlace;
         endOfGame = false;
         if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
             nbDeCoups++;
@@ -84,6 +72,7 @@ public abstract class Joueurs {
             endOfGame = true;
         } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
             System.out.println("Nombre maximum d'essais atteints.");
+            System.out.println("Perdu : la solution était : "+intToString(tabCombiRandom));
             System.out.println();
             endOfGame = true;
         }
@@ -104,7 +93,6 @@ public abstract class Joueurs {
         if (((nbBienPlace1 != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) &&
                 ((nbBienPlace2 != config.getNbCases()) && (nbDeCoups < config.getNbEssais()))) {
             nbDeCoups++;
-            System.out.println("Essai n°" + nbDeCoups);
         } else if ((nbBienPlace1 == config.getNbCases()) && (nbBienPlace2 != config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
             System.out.println("Victoire en " + nbDeCoups + " coup !");
             endOfGame = true;
@@ -133,8 +121,8 @@ public abstract class Joueurs {
      * @return : nombre de chiffres bien placés
      */
     public int getNbBienPlace(ArrayList<Character> tabIndice, int nbBienPlace) {
-        this.tabIndice=tabIndice;
-        this.nbBienPlace=nbBienPlace;
+        this.tabIndice = tabIndice;
+        this.nbBienPlace = nbBienPlace;
         nbBienPlace = 0;
         for (int i = 0; i < tabIndice.size(); i++) {
             if (tabIndice.get(i) == '=') nbBienPlace++;
@@ -172,7 +160,7 @@ public abstract class Joueurs {
         return tabIndicesDejaJoues;
     }
 
-    public String afficheIndice(ArrayList<Character> tabIndice){
+    public String afficheIndice(ArrayList<Character> tabIndice) {
         this.tabIndice = tabIndice;
         StringBuilder sb = new StringBuilder();
         for (Character ch : tabIndice) {
@@ -185,7 +173,7 @@ public abstract class Joueurs {
     public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
         combinaisonsDejaJouees(tabCombi);
         indicesDejaJoues(tabIndice);
-       for (int i = 0; i < nbDeCoups; i++) {
+        for (int i = 0; i < nbDeCoups; i++) {
             System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
         }
     }

@@ -80,7 +80,7 @@ public class JoueurHumain extends Joueurs {
     //}
 
     public void propositionInitiale() {
-        System.out.println("Votre combinaison de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
+        System.out.println("Votre code secret de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
     }
 
 
