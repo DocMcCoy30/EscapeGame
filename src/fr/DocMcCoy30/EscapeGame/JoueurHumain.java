@@ -2,6 +2,7 @@ package fr.DocMcCoy30.EscapeGame;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,25 +15,25 @@ public class JoueurHumain extends Joueurs {
     public JoueurHumain(Configuration config) {
         super(config);
     }
-    
+
     @Override
     public ArrayList<Integer> combi(ArrayList<Integer> tabCombiInput) {
         this.tabCombiInput = tabCombiInput;
         String combinaison;
         tabCombiInput.clear();
-        try{
-        combinaison = sc.nextLine();
-        if (combinaison.equals("")) {
-            System.out.println("Votre combinaison doit contenir " + config.getNbCases() + " chiffres");
-            tabCombiInput.clear();
-            combi(tabCombiInput);
-            throw new IllegalArgumentException();
-        }
-        char[] combiChar = combinaison.toCharArray();
-        for (int i = 0; i < combiChar.length; i++) {
-            int j = Character.getNumericValue(combiChar[i]);
-            tabCombiInput.add(j);
-        }
+        try {
+            combinaison = sc.nextLine();
+            if (combinaison.equals("")) {
+                System.out.println("Votre combinaison doit contenir " + config.getNbCases() + " chiffres");
+                tabCombiInput.clear();
+                combi(tabCombiInput);
+                throw new IllegalArgumentException();
+            }
+            char[] combiChar = combinaison.toCharArray();
+            for (int i = 0; i < combiChar.length; i++) {
+                int j = Character.getNumericValue(combiChar[i]);
+                tabCombiInput.add(j);
+            }
             for (int i = 0; i < tabCombiInput.size(); i++) {
                 if (tabCombiInput.get(i) > config.getNbDigits()) {
                     System.out.println("Les chiffres de votre combinaison doivent etre compris entre 0 et " + config.getNbDigits());
@@ -52,14 +53,41 @@ public class JoueurHumain extends Joueurs {
         return tabCombiInput;
     }
 
-    public void propositionInitiale (){
+    //@Override
+    //public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
+    //    tabCombiDejaJouees.add(intToString(tabCombi));
+    //    return tabCombiDejaJouees;
+    //}
+//
+    //@Override
+    //public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
+    //    StringBuilder sb = new StringBuilder();
+    //    for (Character ch : tabIndice) {
+    //        sb.append(ch);
+    //    }
+    //    String strIndices = sb.toString();
+    //    tabIndicesDejaJoues.add(strIndices);
+    //    return tabIndicesDejaJoues;
+    //}
+//
+    //@Override
+    //public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
+    //    combinaisonsDejaJouees(tabCombi);
+    //    indicesDejaJoues(tabIndice);
+    //    for (int i = 0; i < nbDeCoups; i++) {
+    //        System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
+    //    }
+    //}
+
+    public void propositionInitiale() {
         System.out.println("Votre combinaison de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
     }
 
 
     /**
      * affiche le code secret et la proposition du PC pour analyse
-     * @param tabCombiInput : code secret Joueur Humain
+     *
+     * @param tabCombiInput  : code secret Joueur Humain
      * @param tabCombiRandom : proposition PC
      */
     public void affichePropositions(ArrayList<Integer> tabCombiInput, ArrayList<Integer> tabCombiRandom) {
@@ -71,7 +99,7 @@ public class JoueurHumain extends Joueurs {
             int nums = tabCombiInput.get(i);
             str1 += nums;
         }
-        System.out.println( "Votre combinaison -> "+str1);
+        System.out.println("Votre combinaison -> " + str1);
         for (int i = 0; i < tabCombiRandom.size(); i++) {
             int nums2 = tabCombiRandom.get(i);
             str2 += nums2;

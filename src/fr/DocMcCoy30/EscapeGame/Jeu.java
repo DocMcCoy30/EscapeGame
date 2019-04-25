@@ -25,61 +25,104 @@ public class Jeu {
         pc = new JoueurOrdi(config);
     }
 
+    public void initNbDejaJoue() {
+        nbBienPlace = 0;
+        nbBienPlace1 = 0;
+        nbBienPlace2 = 0;
+    }
+
+
     public void challenger() {
-        pc.initNb();
-        pc.tabindicesDejaJoues.clear();
+        initNbDejaJoue();
+        pc.initNbDeCoups();
         pc.tabCombiDejaJouees.clear();
+        pc.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
         pc.modeDev(tabCombiRandom);
-        while (!pc.conditionsDeSortie()) {
+        while (!pc.conditionsDeSortie(nbBienPlace)) {
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
-            pc.displayModeChal(tabCombiInput, tabIndice);
-            pc.getNbBienPlace();
+            pc.displayResult(tabCombiInput, tabIndice);
+            nbBienPlace = pc.getNbBienPlace(tabIndice, nbBienPlace);
         }
     }
 
     public void defenseur() {
-        int i = 0;
-        tabIndice.clear();
-        jh.initNb();
+        initNbDejaJoue();
+        jh.initNbDeCoups();
+        jh.tabCombiDejaJouees.clear();
+        jh.tabIndicesDejaJoues.clear();
+
         jh.propositionInitiale();
         jh.combi(tabCombiInput);
         pc.initTabPc(tabCombiRandom);
         pc.tabBornesMinMax(tabBornes);
-        while (!jh.conditionsDeSortie()) {
-            jh.affichePropositions(tabCombiInput, tabCombiRandom);
+        while (!jh.conditionsDeSortie(nbBienPlace)) {
             tabIndice = jh.indicesResolution(tabCombiRandom, tabCombiInput);
-            System.out.print(pc.indicesDejaJoues(tabIndice).get(i));
-            System.out.println();
+            jh.displayResult(tabCombiRandom, tabIndice);
             jh.validationIndices();
-            nbBienPlace = jh.getNbBienPlace();
+            nbBienPlace = jh.getNbBienPlace(tabIndice, nbBienPlace);
             pc.proposition(tabCombiRandom, tabIndice, tabBornes);
-            i++;
         }
     }
 
     public void duel() {
-        nbBienPlace1 = 0;
-        nbBienPlace2 = 0;
-        pc.initNb();
+        initNbDejaJoue();
+        pc.initNbDeCoups();
+        pc.tabCombiDejaJouees.clear();
+        pc.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
+
+        jh.initNbDeCoups();
+        jh.tabCombiDejaJouees.clear();
+        jh.tabIndicesDejaJoues.clear();
+        jh.propositionInitiale();
         jh.combi(tabCombiInput2);
         pc.initTabPc(tabCombiRandom2);
-        System.out.println("J'entre ma combinaison");
+        pc.tabBornesMinMax(tabBornes);
+
         pc.modeDev(tabCombiRandom);
-        while (!jh.conditionsDeSortieDuel(nbBienPlace1, nbBienPlace2)) {
-            System.out.println("A vous de trouver ma combinaison");
+
+        while (!pc.conditionsDeSortieDuel(nbBienPlace1, nbBienPlace2)) {
+
+            System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);
-            pc.indicesResolution(tabCombiInput, tabCombiRandom);
-            nbBienPlace1 = pc.getNbBienPlace();
-            System.out.println("A moi de trouver votre combinaison");
-            jh.affichePropositions(tabCombiInput2, tabCombiRandom2);
+            tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
+            System.out.println("nombre de coup = "+pc.nbDeCoups);
+            pc.displayResult(tabCombiInput, tabIndice);
+            nbBienPlace1 = pc.getNbBienPlace(tabIndice, nbBienPlace);
+
+            System.out.println("Defenseur");
             tabIndice2 = jh.indicesResolution(tabCombiRandom2, tabCombiInput2);
+            System.out.println("nombre de coup = "+jh.nbDeCoups);
+            jh.displayResult(tabCombiRandom2, tabIndice2);
             jh.validationIndices();
-            nbBienPlace2 = jh.getNbBienPlace();
+            nbBienPlace2 = jh.getNbBienPlace(tabIndice2, nbBienPlace);
             pc.proposition(tabCombiRandom2, tabIndice2, tabBornes);
         }
+
     }
+
+    //public void oldDefenseur() {
+    //    initNbDejaJoue();
+    //    jh.initNbDeCoups();
+    //    jh.tabCombiDejaJouees.clear();
+    //    jh.tabIndicesDejaJoues.clear();
+//
+    //    jh.propositionInitiale();
+    //    jh.combi(tabCombiInput);
+    //    pc.initTabPc(tabCombiRandom);
+    //    pc.tabBornesMinMax(tabBornes);
+    //    while (!jh.conditionsDeSortie(nbBienPlace)) {
+    //        jh.affichePropositions(tabCombiInput, tabCombiRandom);
+    //        tabIndice = jh.indicesResolution(tabCombiRandom, tabCombiInput);
+    //        System.out.println(pc.afficheIndice(tabIndice));
+    //        System.out.println();
+    //        jh.validationIndices();
+    //        nbBienPlace = jh.getNbBienPlace(tabIndice, nbBienPlace);
+    //        pc.proposition(tabCombiRandom, tabIndice, tabBornes);
+    //    }
+    //}
+
 }
 

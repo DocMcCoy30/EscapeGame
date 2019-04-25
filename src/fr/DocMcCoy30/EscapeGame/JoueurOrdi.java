@@ -21,6 +21,33 @@ public class JoueurOrdi extends Joueurs {
         return tabCombiRandom;
     }
 
+    //@Override
+    //public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
+    //    tabCombiDejaJouees.add(intToString(tabCombi));
+    //    return tabCombiDejaJouees;
+    //}
+//
+    //@Override
+    //public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
+    //    StringBuilder sb = new StringBuilder();
+    //    for (Character ch : tabIndice) {
+    //        sb.append(ch);
+    //    }
+    //    String strIndices = sb.toString();
+    //    tabIndicesDejaJoues.add(strIndices);
+    //    return tabIndicesDejaJoues;
+    //}
+//
+    //@Override
+    //public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
+    //    combinaisonsDejaJouees(tabCombi);
+    //    indicesDejaJoues(tabIndice);
+    //    for (int i = 0; i < nbDeCoups; i++) {
+    //        System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
+    //    }
+    //}
+
+
     /**
      * Determine un chiffre aléatoire compris entre deux bornes
      *
@@ -35,19 +62,22 @@ public class JoueurOrdi extends Joueurs {
 
     /**
      * initialise une List d'objet. Permet d'enregister les valeurs min et max pour chaque chiffre de la proposition de l'ordinateur
+     *
      * @param tabBornes
      * @return : tableau d'objet Bornes
      */
     public List<Bornes> tabBornesMinMax(List<Bornes> tabBornes) {
         this.tabBornes = tabBornes;
+        tabBornes.clear();
         for (int i = 0; i < config.getNbCases(); i++) {
-            tabBornes.add(new Bornes(0,9));
+            tabBornes.add(new Bornes(0, 9));
         }
         return tabBornes;
     }
 
     /**
      * initialise la premiere proposition de l'ordinateur
+     *
      * @param tabCombiRandom
      * @return : tableau de proposition
      */
@@ -63,6 +93,7 @@ public class JoueurOrdi extends Joueurs {
     /**
      * après analyse des indices (+/- ou =), redéfinit les bornes min et max,
      * détermine un chiffre aléatoire entre ces deux bornes et effectue une nouvelle proposition
+     *
      * @param tabCombiRandom : tableau de chiffres => nouvelle proposition
      * @param tabIndice      : tableau d'indices après comparaison entre code secret et proposition
      * @param tabBornes      : tableau d'objet Bornes
@@ -79,7 +110,7 @@ public class JoueurOrdi extends Joueurs {
                 nbRand = digitRandom(tabBornes.get(i).getBorneMin(), tabBornes.get(i).getBorneMax());
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '+') {
-                tabBornes.get(i).setBorneMin(tabCombiRandom.get(i)+1);
+                tabBornes.get(i).setBorneMin(tabCombiRandom.get(i) + 1);
                 nbRand = digitRandom(tabBornes.get(i).getBorneMin(), tabBornes.get(i).getBorneMax());
                 tabCombiRandom.set(i, nbRand);
             } else if (tabIndice.get(i) == '=') {

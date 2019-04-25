@@ -9,8 +9,9 @@ public abstract class Joueurs {
     protected ArrayList<Integer> tabCombiRandom = new ArrayList<>();
     protected ArrayList<Integer> tabCombiInput = new ArrayList<>();
     protected ArrayList<String> tabCombiDejaJouees = new ArrayList<>();
-    protected ArrayList<String> tabindicesDejaJoues = new ArrayList<>();
+    protected ArrayList<String> tabIndicesDejaJoues = new ArrayList<>();
     protected boolean endOfGame;
+    protected String strIndices;
     protected int nbBienPlace, nbBienPlace1, nbBienPlace2, nbDeCoups;
 
     public Joueurs(Configuration config) {
@@ -25,7 +26,17 @@ public abstract class Joueurs {
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
-    public void modeDev(ArrayList<Integer> tabCombiRandom) {
+    //public abstract ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi);
+//
+    //public abstract ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice);
+//
+    //public abstract void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice);
+
+
+
+
+
+        public void modeDev(ArrayList<Integer> tabCombiRandom) {
         if (config.getModeDev()) System.out.println("Le code secret est : " + intToString(tabCombiRandom));
     }
 
@@ -62,7 +73,8 @@ public abstract class Joueurs {
      *
      * @return : fin du jeu (true/false) selon que les conditions sont remplies ou non
      */
-    public boolean conditionsDeSortie() {
+    public boolean conditionsDeSortie(int nbBienPlace) {
+        this.nbBienPlace=nbBienPlace;
         endOfGame = false;
         if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
             nbDeCoups++;
@@ -111,8 +123,7 @@ public abstract class Joueurs {
         return endOfGame;
     }
 
-    public void initNb() {
-        nbBienPlace = 0;
+    public void initNbDeCoups() {
         nbDeCoups = 0;
     }
 
@@ -121,7 +132,9 @@ public abstract class Joueurs {
      *
      * @return : nombre de chiffres bien placés
      */
-    public int getNbBienPlace() {
+    public int getNbBienPlace(ArrayList<Character> tabIndice, int nbBienPlace) {
+        this.tabIndice=tabIndice;
+        this.nbBienPlace=nbBienPlace;
         nbBienPlace = 0;
         for (int i = 0; i < tabIndice.size(); i++) {
             if (tabIndice.get(i) == '=') nbBienPlace++;
@@ -144,30 +157,36 @@ public abstract class Joueurs {
         return str;
     }
 
-    public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombiInput) {
-        this.tabCombiInput = tabCombiInput;
-        tabCombiDejaJouees.add(intToString(tabCombiInput));
+    public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
+        tabCombiDejaJouees.add(intToString(tabCombi));
         return tabCombiDejaJouees;
     }
 
     public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
-        this.tabIndice = tabIndice;
         StringBuilder sb = new StringBuilder();
         for (Character ch : tabIndice) {
             sb.append(ch);
         }
         String strIndices = sb.toString();
-        tabindicesDejaJoues.add(strIndices);
-        return tabindicesDejaJoues;
+        tabIndicesDejaJoues.add(strIndices);
+        return tabIndicesDejaJoues;
     }
 
-    public void displayModeChal(ArrayList<Integer> tabCombiInput, ArrayList<Character> tabIndice) {
-        combinaisonsDejaJouees(tabCombiInput);
-        indicesDejaJoues(tabIndice);
-        for (int i = 0; i < nbDeCoups; i++) {
-            System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabindicesDejaJoues.get(i));
+    public String afficheIndice(ArrayList<Character> tabIndice){
+        this.tabIndice = tabIndice;
+        StringBuilder sb = new StringBuilder();
+        for (Character ch : tabIndice) {
+            sb.append(ch);
         }
-
+        strIndices = sb.toString();
+        return strIndices;
     }
 
+    public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
+        combinaisonsDejaJouees(tabCombi);
+        indicesDejaJoues(tabIndice);
+       for (int i = 0; i < nbDeCoups; i++) {
+            System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
+        }
+    }
 }
