@@ -44,11 +44,11 @@ public class Jeu {
         pc.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
         pc.modeDev(tabCombiRandom);
-        while (!pc.conditionsDeSortie(nbBienPlace)) {
+        while (!jh.conditionsDeSortie(nbBienPlace)) {
             System.out.println("Proposition ?");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
-            pc.displayResult(tabCombiInput, tabIndice);
+            jh.displayResult(tabCombiInput, tabIndice);
             nbBienPlace = pc.getNbBienPlace(tabIndice, nbBienPlace);
         }
     }
@@ -66,9 +66,9 @@ public class Jeu {
         jh.combi(tabCombiInput);
         pc.initTabPc(tabCombiRandom);
         pc.tabBornesMinMax(tabBornes);
-        while (!jh.conditionsDeSortie(nbBienPlace)) {
+        while (!pc.conditionsDeSortie(nbBienPlace)) {
             tabIndice = jh.indicesResolution(tabCombiRandom, tabCombiInput);
-            jh.displayResult(tabCombiRandom, tabIndice);
+            pc.displayResult(tabCombiRandom, tabIndice);
             jh.validationIndices();
             nbBienPlace = jh.getNbBienPlace(tabIndice, nbBienPlace);
             pc.proposition(tabCombiRandom, tabIndice, tabBornes);
@@ -100,13 +100,13 @@ public class Jeu {
             System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
-            pc.displayResult(tabCombiInput, tabIndice);
+            jh.displayResult(tabCombiInput, tabIndice);
             nbBienPlace1 = pc.getNbBienPlace(tabIndice, nbBienPlace);
             System.out.println();
 
             System.out.println("Defenseur");
             tabIndice2 = jh.indicesResolution(tabCombiRandom2, tabCombiInput2);
-            jh.displayResult(tabCombiRandom2, tabIndice2);
+            pc.displayResult(tabCombiRandom2, tabIndice2);
             jh.validationIndices();
             nbBienPlace2 = jh.getNbBienPlace(tabIndice2, nbBienPlace);
             pc.proposition(tabCombiRandom2, tabIndice2, tabBornes);
