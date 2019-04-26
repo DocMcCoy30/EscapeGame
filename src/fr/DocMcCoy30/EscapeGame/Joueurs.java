@@ -36,7 +36,7 @@ public abstract class Joueurs {
      * @param tabCombiRandom
      */
     public void modeDev(ArrayList<Integer> tabCombiRandom) {
-        if (config.getModeDev()) System.out.println("Le code secret est : " + intToString(tabCombiRandom));
+        if (config.getModeDev()) System.out.println("Le code secret de l'ordinateur est : " + intToString(tabCombiRandom));
     }
 
     /**

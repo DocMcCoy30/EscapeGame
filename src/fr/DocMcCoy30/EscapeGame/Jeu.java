@@ -45,6 +45,7 @@ public class Jeu {
         pc.combi(tabCombiRandom);
         pc.modeDev(tabCombiRandom);
         while (!pc.conditionsDeSortie(nbBienPlace)) {
+            System.out.println("Proposition ?");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
             pc.displayResult(tabCombiInput, tabIndice);
@@ -94,22 +95,22 @@ public class Jeu {
 
         pc.modeDev(tabCombiRandom);
 
-        while ((!jh.conditionsDeSortie(nbBienPlace1))&&(!pc.conditionsDeSortie(nbBienPlace2)))  {
+        while ((!jh.conditionsDeSortie(nbBienPlace1))&(!pc.conditionsDeSortie(nbBienPlace2)))  {
 
             System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
-            System.out.println("nombre de coup = "+pc.nbDeCoups);
             pc.displayResult(tabCombiInput, tabIndice);
             nbBienPlace1 = pc.getNbBienPlace(tabIndice, nbBienPlace);
+            System.out.println();
 
             System.out.println("Defenseur");
             tabIndice2 = jh.indicesResolution(tabCombiRandom2, tabCombiInput2);
-            System.out.println("nombre de coup = "+jh.nbDeCoups);
             jh.displayResult(tabCombiRandom2, tabIndice2);
             jh.validationIndices();
             nbBienPlace2 = jh.getNbBienPlace(tabIndice2, nbBienPlace);
             pc.proposition(tabCombiRandom2, tabIndice2, tabBornes);
+            System.out.println();
         }
 
     }

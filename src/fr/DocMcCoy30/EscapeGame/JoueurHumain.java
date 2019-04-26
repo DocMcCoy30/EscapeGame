@@ -60,7 +60,7 @@ public class JoueurHumain extends Joueurs {
         if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
             nbDeCoups++;
         } else if ((nbBienPlace == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
-            System.out.println("Victoire de l'ordinateur en " + nbDeCoups + " coups !");
+            System.out.println("Victoire du joueur en " + nbDeCoups + " coups !");
             System.out.println();
             endOfGame = true;
         } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
