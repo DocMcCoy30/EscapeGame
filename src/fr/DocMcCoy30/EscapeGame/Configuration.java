@@ -42,7 +42,7 @@ public class Configuration {
     }
 
     /**
-     *
+     * récupère la valeur de la variable nbCases
      * @return
      */
     public int getNbCases() {
@@ -50,7 +50,7 @@ public class Configuration {
     }
 
     /**
-     *
+     * récupère la valeur de la variable nbDigits
      * @return
      */
     public int getNbDigits() {
@@ -58,7 +58,7 @@ public class Configuration {
     }
 
     /**
-     *
+     * récupère la valeur de la variable nbEssais
      * @return
      */
     public int getNbEssais() {
@@ -66,7 +66,7 @@ public class Configuration {
     }
 
     /**
-     *
+     * récupère la valeur de la variable modeDev
      * @return
      */
     public boolean getModeDev() {
@@ -74,7 +74,7 @@ public class Configuration {
     }
 
     /**
-     *
+     * détermine la valeur de la variable modeDev
      * @param modeDev
      */
     public void setModeDev(Boolean modeDev) {

@@ -53,63 +53,34 @@ public class JoueurHumain extends Joueurs {
         return tabCombiInput;
     }
 
-    //@Override
-    //public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
-    //    tabCombiDejaJouees.add(intToString(tabCombi));
-    //    return tabCombiDejaJouees;
-    //}
-//
-    //@Override
-    //public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
-    //    StringBuilder sb = new StringBuilder();
-    //    for (Character ch : tabIndice) {
-    //        sb.append(ch);
-    //    }
-    //    String strIndices = sb.toString();
-    //    tabIndicesDejaJoues.add(strIndices);
-    //    return tabIndicesDejaJoues;
-    //}
-//
-    //@Override
-    //public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
-    //    combinaisonsDejaJouees(tabCombi);
-    //    indicesDejaJoues(tabIndice);
-    //    for (int i = 0; i < nbDeCoups; i++) {
-    //        System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
-    //    }
-    //}
+    @Override
+    public boolean conditionsDeSortie(int nbBienPlace) {
+        this.nbBienPlace = nbBienPlace;
+        endOfGame = false;
+        if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
+            nbDeCoups++;
+        } else if ((nbBienPlace == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
+            System.out.println("Victoire de l'ordinateur en " + nbDeCoups + " coups !");
+            System.out.println();
+            endOfGame = true;
+        } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
+            System.out.println("Nombre maximum d'essais atteints.");
+            System.out.println("Perdu : la solution était : " + intToString(tabCombiRandom));
+            System.out.println();
+            endOfGame = true;
+        }
+        return endOfGame;
+    }
 
+    /**
+     * Affiche l'invite d'entrée du code secret du joueur
+     */
     public void propositionInitiale() {
         System.out.println("Votre code secret de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
     }
 
-
     /**
-     * affiche le code secret et la proposition du PC pour analyse
-     *
-     * @param tabCombiInput  : code secret Joueur Humain
-     * @param tabCombiRandom : proposition PC
-     */
-    public void affichePropositions(ArrayList<Integer> tabCombiInput, ArrayList<Integer> tabCombiRandom) {
-        this.tabCombiInput = tabCombiInput;
-        this.tabCombiRandom = tabCombiRandom;
-        String str1 = "";
-        String str2 = "";
-        for (int i = 0; i < tabCombiInput.size(); i++) {
-            int nums = tabCombiInput.get(i);
-            str1 += nums;
-        }
-        System.out.println("Votre combinaison -> " + str1);
-        for (int i = 0; i < tabCombiRandom.size(); i++) {
-            int nums2 = tabCombiRandom.get(i);
-            str2 += nums2;
-        }
-        System.out.println("Ma proposition    -> " + str2);
-        System.out.print("Réponse           -> ");
-    }
-
-    /**
-     * Demande de validation après analyse automatisée
+     * Demande de validation par enter après affichage réponse
      */
     public void validationIndices() {
         try {

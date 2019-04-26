@@ -26,6 +26,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Affiche la présentation du jeu
+     */
     public void presentationJeux() {
         System.out.println();
         System.out.println("Bienvenue à Escape Game");
@@ -35,6 +38,9 @@ public class Menu {
         System.out.println();
     }
 
+    /**
+     * Affiche le menu principal
+     */
     public void modeMenu() {
         int i;
         String[] modes = {"Challenger", "Defenseur", "Duel", "Info Configuration", "Quitter"};
@@ -45,6 +51,11 @@ public class Menu {
         }
     }
 
+    /**
+     * Récupère le choix du joueur dans le menu principal et lance le jeu selectionné
+     *
+     * @return : chiffre corrspondant au choix du joueur
+     */
     public int modeChoix() {
         choixMode = 0;
         while (choixMode <= 0 || choixMode > 5) {
@@ -64,7 +75,9 @@ public class Menu {
         return choixMode;
     }
 
-
+    /**
+     * Affiche le menu de fin de jeu
+     */
     public void finMenu() {
         System.out.println("Que souhaitez vous faire ?");
         System.out.println("1 - Rejouer");
@@ -73,7 +86,11 @@ public class Menu {
 
     }
 
-
+    /**
+     * Récupère le choix du joueur dans le menu de fin de jeu et lance l'action attendu
+     *
+     * @return : chiffre corrspondant au choix du joueur
+     */
     public int finChoix() {
         choixFin = 0;
         while (choixFin <= 0 || choixFin > 3) {
@@ -81,12 +98,9 @@ public class Menu {
             System.out.println("Votre choix ?");
             try {
                 choixFin = sc.nextInt();
-                /*if (choixFin == 1) {
-                    modeChoix();
-                } else/*/
                 if (choixFin == 2) {
                     modeChoix();
-                }else if (choixFin == 3) {
+                } else if (choixFin == 3) {
                     System.out.println("Merci d'avoir jouer. A bientôt.");
                 }
             } catch (InputMismatchException e) {
@@ -98,7 +112,9 @@ public class Menu {
         return choixFin;
     }
 
-
+    /**
+     * Lance les actions attendues et selectionnées dans les différents menus
+     */
     public void runJeuSelectionne() {
         Jeu jeu = new Jeu(config);
         switch (choixMode) {

@@ -21,32 +21,24 @@ public class JoueurOrdi extends Joueurs {
         return tabCombiRandom;
     }
 
-    //@Override
-    //public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
-    //    tabCombiDejaJouees.add(intToString(tabCombi));
-    //    return tabCombiDejaJouees;
-    //}
-//
-    //@Override
-    //public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
-    //    StringBuilder sb = new StringBuilder();
-    //    for (Character ch : tabIndice) {
-    //        sb.append(ch);
-    //    }
-    //    String strIndices = sb.toString();
-    //    tabIndicesDejaJoues.add(strIndices);
-    //    return tabIndicesDejaJoues;
-    //}
-//
-    //@Override
-    //public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
-    //    combinaisonsDejaJouees(tabCombi);
-    //    indicesDejaJoues(tabIndice);
-    //    for (int i = 0; i < nbDeCoups; i++) {
-    //        System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
-    //    }
-    //}
-
+    @Override
+    public boolean conditionsDeSortie(int nbBienPlace) {
+        this.nbBienPlace = nbBienPlace;
+        endOfGame = false;
+        if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
+            nbDeCoups++;
+        } else if ((nbBienPlace == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
+            System.out.println("Victoire du joueur en " + nbDeCoups + " coup !");
+            System.out.println();
+            endOfGame = true;
+        } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
+            System.out.println("Nombre maximum d'essais atteints.");
+            System.out.println("Perdu : la solution était : "+intToString(tabCombiRandom));
+            System.out.println();
+            endOfGame = true;
+        }
+        return endOfGame;
+    }
 
     /**
      * Determine un chiffre aléatoire compris entre deux bornes
@@ -61,7 +53,7 @@ public class JoueurOrdi extends Joueurs {
     }
 
     /**
-     * initialise une List d'objet. Permet d'enregister les valeurs min et max pour chaque chiffre de la proposition de l'ordinateur
+     * Initialise une List d'objet qui permet d'enregister les bornes (valeurs min et max) pour chaque chiffre de la proposition de l'ordinateur
      *
      * @param tabBornes
      * @return : tableau d'objet Bornes
@@ -76,7 +68,7 @@ public class JoueurOrdi extends Joueurs {
     }
 
     /**
-     * initialise la premiere proposition de l'ordinateur
+     * Initialise la premiere proposition de l'ordinateur
      *
      * @param tabCombiRandom
      * @return : tableau de proposition
@@ -91,7 +83,7 @@ public class JoueurOrdi extends Joueurs {
     }
 
     /**
-     * après analyse des indices (+/- ou =), redéfinit les bornes min et max,
+     * Analyse des indices (+/- ou =), redéfinit les bornes min et max,
      * détermine un chiffre aléatoire entre ces deux bornes et effectue une nouvelle proposition
      *
      * @param tabCombiRandom : tableau de chiffres => nouvelle proposition

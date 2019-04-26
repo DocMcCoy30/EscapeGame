@@ -25,13 +25,18 @@ public class Jeu {
         pc = new JoueurOrdi(config);
     }
 
+    /**
+     * Initialise les variables nbBienPlaces
+     */
     public void initNbDejaJoue() {
         nbBienPlace = 0;
         nbBienPlace1 = 0;
         nbBienPlace2 = 0;
     }
 
-
+    /**
+     * Jeu en mode challenger
+     */
     public void challenger() {
         initNbDejaJoue();
         pc.initNbDeCoups();
@@ -47,6 +52,9 @@ public class Jeu {
         }
     }
 
+    /**
+     * Jeu en mode défenseur
+     */
     public void defenseur() {
         initNbDejaJoue();
         jh.initNbDeCoups();
@@ -66,6 +74,9 @@ public class Jeu {
         }
     }
 
+    /**
+     * Jeu en mode duel
+     */
     public void duel() {
         initNbDejaJoue();
         pc.initNbDeCoups();
@@ -83,7 +94,7 @@ public class Jeu {
 
         pc.modeDev(tabCombiRandom);
 
-        while (!jh.conditionsDeSortieDuel(nbBienPlace1, nbBienPlace2)) {
+        while ((!jh.conditionsDeSortie(nbBienPlace1))&&(!pc.conditionsDeSortie(nbBienPlace2)))  {
 
             System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);
@@ -102,27 +113,5 @@ public class Jeu {
         }
 
     }
-
-    //public void oldDefenseur() {
-    //    initNbDejaJoue();
-    //    jh.initNbDeCoups();
-    //    jh.tabCombiDejaJouees.clear();
-    //    jh.tabIndicesDejaJoues.clear();
-//
-    //    jh.propositionInitiale();
-    //    jh.combi(tabCombiInput);
-    //    pc.initTabPc(tabCombiRandom);
-    //    pc.tabBornesMinMax(tabBornes);
-    //    while (!jh.conditionsDeSortie(nbBienPlace)) {
-    //        jh.affichePropositions(tabCombiInput, tabCombiRandom);
-    //        tabIndice = jh.indicesResolution(tabCombiRandom, tabCombiInput);
-    //        System.out.println(pc.afficheIndice(tabIndice));
-    //        System.out.println();
-    //        jh.validationIndices();
-    //        nbBienPlace = jh.getNbBienPlace(tabIndice, nbBienPlace);
-    //        pc.proposition(tabCombiRandom, tabIndice, tabBornes);
-    //    }
-    //}
-
 }
 

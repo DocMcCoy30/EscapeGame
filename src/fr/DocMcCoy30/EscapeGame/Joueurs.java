@@ -11,29 +11,36 @@ public abstract class Joueurs {
     protected ArrayList<String> tabCombiDejaJouees = new ArrayList<>();
     protected ArrayList<String> tabIndicesDejaJoues = new ArrayList<>();
     protected boolean endOfGame;
-    protected String strIndices;
-    protected int nbBienPlace, nbBienPlace1, nbBienPlace2, nbDeCoups;
+    protected int nbBienPlace, nbDeCoups;
 
     public Joueurs(Configuration config) {
         this.config = config;
     }
 
     /**
-     * Détermination d'une combinaison (définie dans classes filles (Random pour fr.DocMcCoy30.EscapeGame.JoueurOrdi, Scanner pour fr.DocMcCoy30.EscapeGame.JoueurHumain)
-     *
+     * Détermine une combinaison (Aleatoire pour JoueurOrdi, Entrée au clavier pour JoueurHumain)
      * @param tabCombi : combinaison dans un tableau de chiffre
      * @return
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
+    /**
+     * Détermine les conditions (victoire ou défaite) pour sortir du jeu
+     * @param nbBienPlace
+     * @return
+     */
+    public abstract boolean conditionsDeSortie(int nbBienPlace);
 
+    /**
+     * Affiche la combinaison secrete de l'ordinateur quand le mode Developpeur est activé
+     * @param tabCombiRandom
+     */
     public void modeDev(ArrayList<Integer> tabCombiRandom) {
         if (config.getModeDev()) System.out.println("Le code secret est : " + intToString(tabCombiRandom));
     }
 
     /**
-     * compare 2 tableaux (proposition et code secret) et donne les indices (+/-/=)
-     *
+     * Compare 2 tableaux (proposition et code secret) et donne les indices (+/-/=)
      * @param tabAttaquant : proposition
      * @param tabDefenseur : code secret
      * @return : tableau d'indices
@@ -57,66 +64,14 @@ public abstract class Joueurs {
     }
 
     /**
-     * Détermine les conditions pour sortir du jeu en mode challenger ou défenseur
-     *
-     * @return : fin du jeu (true/false) selon que les conditions sont remplies ou non
+     * Initialise la variable nbDeCoups à 0
      */
-    public boolean conditionsDeSortie(int nbBienPlace) {
-        this.nbBienPlace = nbBienPlace;
-        endOfGame = false;
-        if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
-            nbDeCoups++;
-        } else if ((nbBienPlace == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
-            System.out.println("Victoire en " + nbDeCoups + " coup !");
-            System.out.println();
-            endOfGame = true;
-        } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
-            System.out.println("Nombre maximum d'essais atteints.");
-            System.out.println("Perdu : la solution était : "+intToString(tabCombiRandom));
-            System.out.println();
-            endOfGame = true;
-        }
-        return endOfGame;
-    }
-
-    /**
-     * determine les conditions pour sortir du jeu en mode duel
-     *
-     * @param nbBienPlace1 : nombre de chiffres trouvés par Joueur Humain
-     * @param nbBienPlace2 : nombre de chiffres trouvés par PC
-     * @return : fin du jeu (true/false) selon que les conditions sont remplies ou non
-     */
-    public boolean conditionsDeSortieDuel(int nbBienPlace1, int nbBienPlace2) {
-        this.nbBienPlace1 = nbBienPlace1;
-        this.nbBienPlace2 = nbBienPlace2;
-        endOfGame = false;
-        if (((nbBienPlace1 != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) &&
-                ((nbBienPlace2 != config.getNbCases()) && (nbDeCoups < config.getNbEssais()))) {
-            nbDeCoups++;
-        } else if ((nbBienPlace1 == config.getNbCases()) && (nbBienPlace2 != config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
-            System.out.println("Victoire en " + nbDeCoups + " coup !");
-            endOfGame = true;
-        } else if ((nbBienPlace2 == config.getNbCases()) && (nbBienPlace1 != config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
-            System.out.println("Victoire en " + nbDeCoups + " coup !");
-            endOfGame = true;
-        } else if ((nbBienPlace1 == config.getNbCases()) && (nbBienPlace2 == config.getNbCases()) && (nbDeCoups <= config.getNbEssais())) {
-            System.out.println("Match Nul !");
-            System.out.println();
-            endOfGame = true;
-        } else if ((nbBienPlace1 != config.getNbCases()) && (nbBienPlace2 != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
-            System.out.println("Nombre maximum d'essais atteints.");
-            System.out.println();
-            endOfGame = true;
-        }
-        return endOfGame;
-    }
-
     public void initNbDeCoups() {
         nbDeCoups = 0;
     }
 
     /**
-     * récupère le nombre de chiffres bien placés après analyse des indices
+     * Récupère le nombre de chiffres bien placés après analyse des indices
      *
      * @return : nombre de chiffres bien placés
      */
@@ -131,10 +86,10 @@ public abstract class Joueurs {
     }
 
     /**
-     * tranforme un ArrayList de chiffre en String
+     * Tranforme un ArrayList de chiffre en String
      *
      * @param : ArrayList de chiffre
-     * @return : String
+     * @return : string
      */
     public String intToString(ArrayList<Integer> tableau) {
         ArrayList<String> intToString = new ArrayList<>();
@@ -145,11 +100,21 @@ public abstract class Joueurs {
         return str;
     }
 
+    /**
+     * Enregistre les propositions dans un tableau
+     * @param tabCombi
+     * @return tableau des combinaisons jouées
+     */
     public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
         tabCombiDejaJouees.add(intToString(tabCombi));
         return tabCombiDejaJouees;
     }
 
+    /**
+     * Enregistre les indices corespondants aux propositions faites dans un tableau
+     * @param tabIndice
+     * @return tabbleau d'indices
+     */
     public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
         StringBuilder sb = new StringBuilder();
         for (Character ch : tabIndice) {
@@ -160,16 +125,11 @@ public abstract class Joueurs {
         return tabIndicesDejaJoues;
     }
 
-    public String afficheIndice(ArrayList<Character> tabIndice) {
-        this.tabIndice = tabIndice;
-        StringBuilder sb = new StringBuilder();
-        for (Character ch : tabIndice) {
-            sb.append(ch);
-        }
-        strIndices = sb.toString();
-        return strIndices;
-    }
-
+    /**
+     * Affiche le nombre de tentative, la proposition et les indices correspondants
+     * @param tabCombi
+     * @param tabIndice
+     */
     public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
         combinaisonsDejaJouees(tabCombi);
         indicesDejaJoues(tabIndice);
