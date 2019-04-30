@@ -54,9 +54,9 @@ public class JoueurHumain extends Joueurs {
     }
 
     @Override
-    public boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer>tabCombi) {
+    public boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer>tabCombiRandom) {
         this.nbBienPlace = nbBienPlace;
-        this.tabCombiRandom=tabCombi;
+        this.tabCombiRandom=tabCombiRandom;
         endOfGame = false;
         if ((nbBienPlace != config.getNbCases()) && (nbDeCoups < config.getNbEssais())) {
             nbDeCoups++;
@@ -66,7 +66,7 @@ public class JoueurHumain extends Joueurs {
             endOfGame = true;
         } else if ((nbBienPlace != config.getNbCases()) && (nbDeCoups >= config.getNbEssais())) {
             System.out.println("Nombre maximum d'essais atteints.");
-            System.out.println("Perdu : la solution était : " + intToString(tabCombi));
+            System.out.println("Perdu : la solution était : " + intToString(tabCombiRandom));
             System.out.println();
             endOfGame = true;
         }
