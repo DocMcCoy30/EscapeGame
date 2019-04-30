@@ -1,5 +1,7 @@
 package fr.DocMcCoy30.EscapeGame;
 
+import fr.DocMcCoy30.EscapeGame.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,5 +1,7 @@
 package fr.DocMcCoy30.EscapeGame;
 
+import fr.DocMcCoy30.EscapeGame.utils.Utils;
+
 import java.util.ArrayList;
 
 public abstract class Joueurs {
@@ -19,6 +21,7 @@ public abstract class Joueurs {
 
     /**
      * Détermine une combinaison (Aleatoire pour JoueurOrdi, Entrée au clavier pour JoueurHumain)
+     *
      * @param tabCombi : combinaison dans un tableau de chiffre
      * @return
      */
@@ -26,21 +29,26 @@ public abstract class Joueurs {
 
     /**
      * Détermine les conditions (victoire ou défaite) pour sortir du jeu
+     *
      * @param nbBienPlace
      * @return
      */
-    public abstract boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer>tabCombi);
+    public abstract boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer> tabCombi);
 
     /**
      * Affiche la combinaison secrete de l'ordinateur quand le mode Developpeur est activé
+     *
      * @param tabCombiRandom
      */
     public void modeDev(ArrayList<Integer> tabCombiRandom) {
-        if (config.getModeDev()) System.out.println("Le code secret de l'ordinateur est : " + intToString(tabCombiRandom));
+        if (config.getModeDev()) {
+            System.out.println("Le code secret de l'ordinateur est : " + intToString(tabCombiRandom));
+        }
     }
 
     /**
      * Compare 2 tableaux (proposition et code secret) et donne les indices (+/-/=)
+     *
      * @param tabAttaquant : proposition
      * @param tabDefenseur : code secret
      * @return : tableau d'indices
@@ -102,6 +110,7 @@ public abstract class Joueurs {
 
     /**
      * Enregistre les propositions dans un tableau
+     *
      * @param tabCombi
      * @return tableau des combinaisons jouées
      */
@@ -112,6 +121,7 @@ public abstract class Joueurs {
 
     /**
      * Enregistre les indices corespondants aux propositions faites dans un tableau
+     *
      * @param tabIndice
      * @return tabbleau d'indices
      */
@@ -127,12 +137,14 @@ public abstract class Joueurs {
 
     /**
      * Affiche le nombre de tentative, la proposition et les indices correspondants
+     *
      * @param tabCombi
      * @param tabIndice
      */
     public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
         combinaisonsDejaJouees(tabCombi);
         indicesDejaJoues(tabIndice);
+        Utils.clearConsole();
         for (int i = 0; i < nbDeCoups; i++) {
             System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
         }
