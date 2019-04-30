@@ -29,7 +29,7 @@ public abstract class Joueurs {
      * @param nbBienPlace
      * @return
      */
-    public abstract boolean conditionsDeSortie(int nbBienPlace);
+    public abstract boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer>tabCombi);
 
     /**
      * Affiche la combinaison secrete de l'ordinateur quand le mode Developpeur est activé

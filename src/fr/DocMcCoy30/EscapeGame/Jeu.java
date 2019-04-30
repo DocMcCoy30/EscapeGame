@@ -44,7 +44,7 @@ public class Jeu {
         pc.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
         pc.modeDev(tabCombiRandom);
-        while (!jh.conditionsDeSortie(nbBienPlace)) {
+        while (!jh.conditionsDeSortie(nbBienPlace,tabCombiRandom)) {
             System.out.println("Proposition ?");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
@@ -66,7 +66,7 @@ public class Jeu {
         jh.combi(tabCombiInput);
         pc.initTabPc(tabCombiRandom);
         pc.tabBornesMinMax(tabBornes);
-        while (!pc.conditionsDeSortie(nbBienPlace)) {
+        while (!pc.conditionsDeSortie(nbBienPlace,tabCombiInput)) {
             tabIndice = jh.indicesResolution(tabCombiRandom, tabCombiInput);
             pc.displayResult(tabCombiRandom, tabIndice);
             jh.validationIndices();
@@ -95,7 +95,7 @@ public class Jeu {
 
         pc.modeDev(tabCombiRandom);
 
-        while ((!jh.conditionsDeSortie(nbBienPlace1))&(!pc.conditionsDeSortie(nbBienPlace2)))  {
+        while ((!jh.conditionsDeSortie(nbBienPlace1,tabCombiRandom))&(!pc.conditionsDeSortie(nbBienPlace2,tabCombiInput2)))  {
 
             System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);
