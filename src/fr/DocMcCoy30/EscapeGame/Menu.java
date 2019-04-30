@@ -1,5 +1,8 @@
 package fr.DocMcCoy30.EscapeGame;
 
+import fr.DocMcCoy30.EscapeGame.jeuduplusmoins.Jeu;
+import fr.DocMcCoy30.EscapeGame.beans.Configuration;
+import fr.DocMcCoy30.EscapeGame.utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -140,6 +143,7 @@ public class Menu {
                 } while (choixFin == 1);
                 break;
             case 4:
+                Utils.clearConsole();
                 config.affiche();
                 modeChoix();
                 break;
