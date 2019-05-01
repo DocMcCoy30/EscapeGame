@@ -16,7 +16,7 @@ public class Configuration {
     private Integer nbCases;
     private Integer nbDigits;
     private Integer nbEssais;
-    private Boolean modeDev;
+    private Boolean modedev;
 
     /**
      * ouvre un flux, récupère les données du fichier config.properties et ferme le flux
@@ -33,7 +33,7 @@ public class Configuration {
             this.nbCases = Integer.parseInt(rb.getString("nbCases"));
             this.nbDigits = Integer.parseInt(rb.getString("nbDigits"));
             this.nbEssais = Integer.parseInt(rb.getString("nbEssais"));
-            this.modeDev = Boolean.parseBoolean(rb.getString("modeDev"));
+            this.modedev = Boolean.parseBoolean(rb.getString("modedev"));
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -70,7 +70,7 @@ public class Configuration {
      * @return
      */
     public boolean getModeDev() {
-        return this.modeDev;
+        return this.modedev;
     }
 
     /**
@@ -78,7 +78,7 @@ public class Configuration {
      * @param modeDev
      */
     public void setModeDev(Boolean modeDev) {
-        this.modeDev = modeDev;
+        this.modedev = modeDev;
     }
 
     /**

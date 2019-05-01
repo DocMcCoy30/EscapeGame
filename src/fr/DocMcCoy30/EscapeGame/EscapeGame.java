@@ -8,19 +8,18 @@ public class EscapeGame {
      * @author DocMcCoy30
      */
     public static void main(String[] args) {
-        /**
-         * Utilisation d'un tableau => Il faut préciser l'indice
-         * On ouvre toujours les accolades pour indiquer un bloc d'instruction même si il n'y en a qu'une.
-         */
-        Boolean modeDev = false;
+
+        args[0].toLowerCase();
+        Boolean modedev = false;
         try {
             if (args[0] != null && args[0].equals("modedev")) {
-                modeDev = true;
+                modedev = true;
+                System.out.println("Lancement de l'application en mode developpeur");
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Lancement de l'application sans paramètre d'entrée.");
         }
-        Menu run = new Menu(modeDev);
+        Menu run = new Menu(modedev);
         run.modeChoix();
     }
 }

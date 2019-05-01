@@ -7,14 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6025aceb-0bb4-44ce-b7f5-3dab3a8d95ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/EscapeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/EscapeGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Joueurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Joueurs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/beans/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/beans/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/jeuduplusmoins/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/jeuduplusmoins/Jeu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,62 +26,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/EscapeGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Jeu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Joueurs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2584#2585#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+            <state relative-caret-position="144">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javadoc/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/EscapeGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurOrdi.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/out/artifacts/EscapeGame_jar/EscapeGame.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
-              <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state>
+              <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -91,17 +56,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            <state relative-caret-position="144">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Bornes.java">
+        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/beans/Configuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="101">
+              <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/jeuduplusmoins/Jeu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -147,20 +121,23 @@
         <option value="$PROJECT_DIR$/src/EscapeGame.java" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Bornes.java" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Configuration.java" />
-        <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Menu.java" />
-        <option value="$PROJECT_DIR$/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurHumain.java" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurOrdi.java" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Jeu.java" />
-        <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Joueurs.java" />
+        <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/beans/Configuration.java" />
+        <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Menu.java" />
+        <option value="$PROJECT_DIR$/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/jeuduplusmoins/Jeu.java" />
         <option value="$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/EscapeGame.java" />
+        <option value="$PROJECT_DIR$/out/artifacts/EscapeGame_jar/EscapeGame.bat" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="1305" />
+    <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -170,12 +147,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="EscapeGame_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
@@ -193,22 +190,40 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="jeuduplusmoins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EscapeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EscapeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="MANAGE_IGNORE_FILES_PROPERTY" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/EscapeGame_jar/resources" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -235,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EscapeGame">
+  <component name="RunManager" selected="JAR Application.EscapeGame_jar.jar">
     <configuration name="EscapeGame" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="fr.DocMcCoy30.EscapeGame.EscapeGame" />
       <module name="EscapeGame" />
@@ -263,8 +278,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EscapeGame" />
         <item itemvalue="JAR Application.EscapeGame_jar.jar" />
+        <item itemvalue="Application.EscapeGame" />
       </list>
     </recent_temporary>
   </component>
@@ -412,7 +427,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13788487" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19812584" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -421,7 +436,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986613" weight="0.9577465" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986613" weight="0.17042254" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -440,7 +455,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13788487" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14190094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -449,7 +464,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986613" visible="true" weight="0.9577465" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986613" visible="true" weight="0.5859155" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -557,13 +572,6 @@
     <entry file="file://$PROJECT_DIR$/EscapeGame.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EscapeGame.java" />
     <entry file="file://$PROJECT_DIR$/src/Configuration.java" />
     <entry file="file://$PROJECT_DIR$/src/Menu.java" />
@@ -571,19 +579,55 @@
     <entry file="file://$PROJECT_DIR$/src/Jeu.java" />
     <entry file="file://$PROJECT_DIR$/src/Joueurs.java" />
     <entry file="file://$PROJECT_DIR$/src/JoueurOrdi.java" />
-    <entry file="file://$PROJECT_DIR$/EscapeGame.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/all.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Configuration.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurHumain.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Jeu.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Joueurs.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurOrdi.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Bornes.java" />
+    <entry file="file://$PROJECT_DIR$/javadoc/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/images/Lancer_app_depuis_fichier_EscapeGame.bat.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/images/Install_Markdown_navigator_plugin_to_see_image_into_md_file.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/images/Artifact_configuration_for_archive_JAR.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="64">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/beans/Bornes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/beans/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -594,72 +638,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurHumain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Bornes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/JoueurOrdi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        <state relative-caret-position="144">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Joueurs.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/jeuduplusmoins/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="816">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        <state relative-caret-position="144">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javadoc/index.html">
+    <entry file="file://$PROJECT_DIR$/EscapeGame.bat">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/Jeu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/DocMcCoy30/EscapeGame/EscapeGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="192">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/EscapeGame_jar/EscapeGame.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -668,7 +681,12 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="library" />
+              <type id="artifact" />
+            </show-content>
+          </artifact-editor>
           <last-edited>EscapeGame:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">

@@ -18,10 +18,10 @@ public class Menu {
 
     private int choixMode, choixFin;
 
-    public Menu(boolean modeDev) {
+    public Menu(boolean modedev) {
         try {
             config = new Configuration();
-            if (modeDev) {
+            if (modedev) {
                 config.setModeDev(true);
             }
         } catch (IOException e) {
