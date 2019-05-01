@@ -1,6 +1,6 @@
-package fr.DocMcCoy30.EscapeGame;
+package fr.DocMcCoy30.EscapeGame.jeuduplusmoins;
 
-import fr.DocMcCoy30.EscapeGame.utils.Utils;
+import fr.DocMcCoy30.EscapeGame.beans.Configuration;
 
 import java.util.ArrayList;
 
@@ -144,7 +144,6 @@ public abstract class Joueurs {
     public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
         combinaisonsDejaJouees(tabCombi);
         indicesDejaJoues(tabIndice);
-        Utils.clearConsole();
         for (int i = 0; i < nbDeCoups; i++) {
             System.out.println("#" + (i + 1) + " Proposition : " + tabCombiDejaJouees.get(i) + " -> Réponse : " + tabIndicesDejaJoues.get(i));
         }

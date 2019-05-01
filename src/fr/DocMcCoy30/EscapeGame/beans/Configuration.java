@@ -1,4 +1,4 @@
-package fr.DocMcCoy30.EscapeGame;
+package fr.DocMcCoy30.EscapeGame.beans;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -93,7 +93,7 @@ public class Configuration {
         } else {
             System.out.println("Mode Developpeur désactivé");
         }
-        System.out.println();
+        System.out.println();//
     }
 
 }

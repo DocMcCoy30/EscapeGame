@@ -1,6 +1,7 @@
-package fr.DocMcCoy30.EscapeGame;
+package fr.DocMcCoy30.EscapeGame.jeuduplusmoins;
 
-import fr.DocMcCoy30.EscapeGame.utils.Utils;
+import fr.DocMcCoy30.EscapeGame.beans.Bornes;
+import fr.DocMcCoy30.EscapeGame.beans.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package fr.DocMcCoy30.EscapeGame;
+package fr.DocMcCoy30.EscapeGame.beans;
 
 public class Bornes {
 

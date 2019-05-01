@@ -1,5 +1,6 @@
-package fr.DocMcCoy30.EscapeGame;
+package fr.DocMcCoy30.EscapeGame.jeuduplusmoins;
 
+import fr.DocMcCoy30.EscapeGame.beans.Configuration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

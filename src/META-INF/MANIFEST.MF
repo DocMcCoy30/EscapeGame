@@ -1,5 +1,4 @@
 Manifest-Version: 1.0
-Class-Path: resources/log4j-api-2.11.0.jar;resources/log4j-core-2.11.0
- .jar;
+Class-Path: resources/log4j-api-2.11.0.jar resources/log4j-core-2.11.0.jar
 Main-Class: fr.DocMcCoy30.EscapeGame.EscapeGame
 
