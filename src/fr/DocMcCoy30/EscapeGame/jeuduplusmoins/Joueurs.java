@@ -23,22 +23,23 @@ public abstract class Joueurs {
      * Détermine une combinaison (Aleatoire pour JoueurOrdi, Entrée au clavier pour JoueurHumain)
      *
      * @param tabCombi : combinaison dans un tableau de chiffre
-     * @return
+     * @return tableau de chiffres : combinaison du joueur
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
     /**
      * Détermine les conditions (victoire ou défaite) pour sortir du jeu
      *
-     * @param nbBienPlace
-     * @return
+     * @param nbBienPlace : nombre de chiffres correspondants au code secret
+     * @param tabCombi : combinaison prise en compte pour évaluer les conditions de sortie : tabCombiRandom pour l'ordinateur, tabCombiInput pour le joueur
+     * @return boolean : true si les conditions de sortie de jeu sont respectées (vistoire ou défaite), false dans le cas contraire
      */
     public abstract boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer> tabCombi);
 
     /**
      * Affiche la combinaison secrete de l'ordinateur quand le mode Developpeur est activé
      *
-     * @param tabCombiRandom
+     * @param tabCombiRandom : combinaison de l'ordinateur à afficher en mode developpeur
      */
     public void modeDev(ArrayList<Integer> tabCombiRandom) {
         if (config.getModeDev()) {
@@ -81,6 +82,8 @@ public abstract class Joueurs {
     /**
      * Récupère le nombre de chiffres bien placés après analyse des indices
      *
+     * @param tabIndice : tableau des indices (+,- ou =)
+     * @param  nbBienPlace : nombre de chiffres de la proposition correspondants au code secret
      * @return : nombre de chiffres bien placés
      */
     public int getNbBienPlace(ArrayList<Character> tabIndice, int nbBienPlace) {
@@ -94,7 +97,7 @@ public abstract class Joueurs {
     }
 
     /**
-     * Tranforme un ArrayList de chiffre en String
+     * Transforme un ArrayList de chiffre en String
      *
      * @param tableau : ArrayList de chiffre
      * @return : string
