@@ -20,6 +20,7 @@ public class Configuration {
 
     /**
      * ouvre un flux, récupère les données du fichier config.properties et ferme le flux
+     *
      * @throws IOException
      */
     public Configuration() throws IOException {
@@ -41,42 +42,20 @@ public class Configuration {
         }
     }
 
-    /**
-     * récupère la valeur de la variable nbCases
-     * @return
-     */
     public int getNbCases() {
         return this.nbCases;
     }
 
-    /**
-     * récupère la valeur de la variable nbDigits
-     * @return
-     */
-    public int getNbDigits() {
-        return this.nbDigits;
-    }
+    public int getNbDigits() { return this.nbDigits;}
 
-    /**
-     * récupère la valeur de la variable nbEssais
-     * @return
-     */
     public int getNbEssais() {
         return this.nbEssais;
     }
 
-    /**
-     * récupère la valeur de la variable modeDev
-     * @return
-     */
     public boolean getModeDev() {
         return this.modedev;
     }
 
-    /**
-     * détermine la valeur de la variable modeDev
-     * @param modeDev
-     */
     public void setModeDev(Boolean modeDev) {
         this.modedev = modeDev;
     }

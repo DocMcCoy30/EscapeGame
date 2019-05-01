@@ -23,7 +23,7 @@ public abstract class Joueurs {
      * Détermine une combinaison (Aleatoire pour JoueurOrdi, Entrée au clavier pour JoueurHumain)
      *
      * @param tabCombi : combinaison dans un tableau de chiffre
-     * @return
+     * @return 
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
