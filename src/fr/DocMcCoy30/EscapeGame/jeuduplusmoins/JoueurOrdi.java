@@ -74,7 +74,7 @@ public class JoueurOrdi extends Joueurs {
     /**
      * Initialise la premiere proposition de l'ordinateur
      *
-     * @param tabCombiRandom
+     * @param tabCombiRandom : tableau de chiffres : combinaison proposée par l'ordinateur
      * @return : tableau de proposition
      */
     public ArrayList<Integer> initTabPc(ArrayList<Integer> tabCombiRandom) {

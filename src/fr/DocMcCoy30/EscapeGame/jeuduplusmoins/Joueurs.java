@@ -23,7 +23,7 @@ public abstract class Joueurs {
      * Détermine une combinaison (Aleatoire pour JoueurOrdi, Entrée au clavier pour JoueurHumain)
      *
      * @param tabCombi : combinaison dans un tableau de chiffre
-     * @return 
+     * @return
      */
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
@@ -96,7 +96,7 @@ public abstract class Joueurs {
     /**
      * Tranforme un ArrayList de chiffre en String
      *
-     * @param : ArrayList de chiffre
+     * @param tableau : ArrayList de chiffre
      * @return : string
      */
     public String intToString(ArrayList<Integer> tableau) {
@@ -111,7 +111,7 @@ public abstract class Joueurs {
     /**
      * Enregistre les propositions dans un tableau
      *
-     * @param tabCombi
+     * @param tabCombi : tableau de combinaison  : tabCombiRandom ou tabCombiInput selon le joueur
      * @return tableau des combinaisons jouées
      */
     public ArrayList<String> combinaisonsDejaJouees(ArrayList<Integer> tabCombi) {
@@ -120,9 +120,9 @@ public abstract class Joueurs {
     }
 
     /**
-     * Enregistre les indices corespondants aux propositions faites dans un tableau
+     * Enregistre les indices correspondants aux propositions faites dans un tableau
      *
-     * @param tabIndice
+     * @param tabIndice : tableau des indices
      * @return tabbleau d'indices
      */
     public ArrayList<String> indicesDejaJoues(ArrayList<Character> tabIndice) {
@@ -138,8 +138,8 @@ public abstract class Joueurs {
     /**
      * Affiche le nombre de tentative, la proposition et les indices correspondants
      *
-     * @param tabCombi
-     * @param tabIndice
+     * @param tabCombi : tableau de combinaison  : tabCombiRandom ou tabCombiInput selon le joueur
+     * @param tabIndice : tableau des indices
      */
     public void displayResult(ArrayList<Integer> tabCombi, ArrayList<Character> tabIndice) {
         combinaisonsDejaJouees(tabCombi);
