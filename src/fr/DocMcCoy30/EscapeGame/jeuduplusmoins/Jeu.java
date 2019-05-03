@@ -63,8 +63,8 @@ public class Jeu {
     public void defenseur() {
         initNbDejaJoue();
         pc.initNbDeCoups();
-        jh.tabCombiDejaJouees.clear();
-        jh.tabIndicesDejaJoues.clear();
+        pc.tabCombiDejaJouees.clear();
+        pc.tabIndicesDejaJoues.clear();
 
         jh.propositionInitiale();
         jh.combi(tabCombiInput);
@@ -85,13 +85,13 @@ public class Jeu {
     public void duel() {
         initNbDejaJoue();
         jh.initNbDeCoups();
-        pc.tabCombiDejaJouees.clear();
-        pc.tabIndicesDejaJoues.clear();
+        jh.tabCombiDejaJouees.clear();
+        jh.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
 
         pc.initNbDeCoups();
-        jh.tabCombiDejaJouees.clear();
-        jh.tabIndicesDejaJoues.clear();
+        pc.tabCombiDejaJouees.clear();
+        pc.tabIndicesDejaJoues.clear();
         jh.propositionInitiale();
         jh.combi(tabCombiInput2);
         pc.initTabPc(tabCombiRandom2);

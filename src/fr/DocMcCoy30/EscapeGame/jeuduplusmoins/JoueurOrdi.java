@@ -81,7 +81,7 @@ public class JoueurOrdi extends Joueurs {
         this.tabCombiRandom = tabCombiRandom;
         tabCombiRandom.clear();
         for (int i = 0; i < config.getNbCases(); i++) {
-            tabCombiRandom.add(5);
+            tabCombiRandom.add(config.getNbDigits()/2);
         }
         return tabCombiRandom;
     }

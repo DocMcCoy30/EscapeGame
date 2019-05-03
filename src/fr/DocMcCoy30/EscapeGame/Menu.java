@@ -92,7 +92,7 @@ public class Menu {
     /**
      * Récupère le choix du joueur dans le menu de fin de jeu et lance l'action attendu
      *
-     * @return : chiffre corrspondant au choix du joueur
+     * @return : chiffre correspondant au choix du joueur
      */
     public int finChoix() {
         choixFin = 0;
