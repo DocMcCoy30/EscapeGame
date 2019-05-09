@@ -1,16 +1,22 @@
 package fr.DocMcCoy30.EscapeGame.beans;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 /**
  * Classe bean : définit les différents choix de configuration du jeu
  */
 public class Configuration {
 
+    private final static Logger log = LogManager.getLogger();
+    Scanner sc = new Scanner(System.in);
     private ResourceBundle rb;
     private FileInputStream fis;
     private Integer nbCases;
@@ -72,7 +78,13 @@ public class Configuration {
         } else {
             System.out.println("Mode Developpeur désactivé");
         }
-        System.out.println();//
+        System.out.println();
+        try {
+            System.out.println("Tapez enter pour retourner au menu");
+            sc.nextLine();
+        } catch (IllegalArgumentException e) {
+            log.error("Entrée Invalide");
+        }
     }
 
 }

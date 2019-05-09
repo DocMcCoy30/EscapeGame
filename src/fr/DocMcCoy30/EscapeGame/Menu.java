@@ -49,7 +49,7 @@ public class Menu {
      */
     public void modeMenu() {
         int i;
-        Utils.clearConsole();
+        //Utils.clearConsole();
         String[] modes = {"Challenger", "Defenseur", "Duel", "Info Configuration", "Quitter"};
         System.out.println("ESCAPE GAME");
         System.out.println();
@@ -66,6 +66,7 @@ public class Menu {
     public int modeChoix() {
         choixMode = 0;
         while (choixMode <= 0 || choixMode > 5) {
+            Utils.clearConsole();
             modeMenu();
             System.out.println("Votre choix ?");
             try {
