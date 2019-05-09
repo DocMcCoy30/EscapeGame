@@ -1,13 +1,10 @@
-# Configurer la génération du fichier JAR
-- Il est est nécessaire de configurer la génération d'un artifact comme ceci :
-cf image ici : /doc/images/Artifact_configuration_for_archive_JAR.png
+﻿Lancement du programme : 
 
+1 - Dans une console :
+	- se positionner dans le répertoire
+	- entrer la ligne de commande : java -jar EscapeGame.jar
+				   ou : java -jar EscapeGame.jar modedev (lancement du jeu en mode developpeur)
 
-![Artifact_configuration_for_archive_JAR.png](doc/images/Artifact_configuration_for_archive_JAR.png "Configuration Artifact")
+2 - double-click sur le fichier EscapeGame.bat
 
-
-**Note** : Pour la voir dans le fichier README.md : télécharger le plugin "Markdown navigator"
-
-![Install_Markdown_navigator_plugin_to_see_image_into_md_file.png](doc/images/Install_Markdown_navigator_plugin_to_see_image_into_md_file.png "Configuration plugin Markdown Navigator")
-
-Aide Markdown : https://fr.wikipedia.org/wiki/Markdown
+3 - Lancer le programme dans IntelliJ : attention, le nettoyage de la console ne fonctionnera pas dans ce cas là.
