@@ -1,5 +1,9 @@
 package fr.DocMcCoy30.EscapeGame.beans;
 
+/**
+ * Classe bean : définit les bornes maximum et minimum entre lesquelles sont générés les chiffres aléatoires
+ * des combianisons de l'ordinateur (propositions et code secret)
+ */
 public class Bornes {
 
     private int borneMin;

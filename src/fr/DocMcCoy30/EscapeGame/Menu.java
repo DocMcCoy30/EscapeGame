@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Affiche les différents menus du jeu
+ */
 public class Menu {
 
     Scanner sc = new Scanner(System.in);
@@ -46,6 +49,7 @@ public class Menu {
      */
     public void modeMenu() {
         int i;
+        Utils.clearConsole();
         String[] modes = {"Challenger", "Defenseur", "Duel", "Info Configuration", "Quitter"};
         System.out.println("ESCAPE GAME");
         System.out.println();
@@ -123,6 +127,7 @@ public class Menu {
         switch (choixMode) {
             case 1:
                 do {
+                    Utils.clearConsole();
                     presentationJeux();
                     jeu.challenger();
                     finChoix();
@@ -130,6 +135,7 @@ public class Menu {
                 break;
             case 2:
                 do {
+                    Utils.clearConsole();
                     presentationJeux();
                     jeu.defenseur();
                     finChoix();
@@ -137,6 +143,7 @@ public class Menu {
                 break;
             case 3:
                 do {
+                    Utils.clearConsole();
                     presentationJeux();
                     jeu.duel();
                     finChoix();

@@ -1,12 +1,16 @@
 package fr.DocMcCoy30.EscapeGame.jeuduplusmoins;
 
 import fr.DocMcCoy30.EscapeGame.beans.Configuration;
+import fr.DocMcCoy30.EscapeGame.utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Hérite de la classe Joeurs, redéfinit les méthodes abstraites et définit les méthodes et attributs du Joueur Humain
+ */
 public class JoueurHumain extends Joueurs {
 
     private final static Logger log = LogManager.getLogger();

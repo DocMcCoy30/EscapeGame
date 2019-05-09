@@ -4,9 +4,13 @@ import fr.DocMcCoy30.EscapeGame.beans.Bornes;
 import fr.DocMcCoy30.EscapeGame.beans.Configuration;
 import fr.DocMcCoy30.EscapeGame.utils.Utils;
 
+import javax.rmi.CORBA.Util;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Définit les méthodes pour les trois différents modes de jeu
+ */
 public class Jeu {
 
     Configuration config;
@@ -47,11 +51,13 @@ public class Jeu {
         pc.tabCombiDejaJouees.clear();
         pc.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
-        pc.modeDev(tabCombiRandom);
+        //pc.modeDev(tabCombiRandom);
         while (!jh.conditionsDeSortie(nbBienPlace,tabCombiRandom)) {
+            pc.modeDev(tabCombiRandom);
             System.out.println("Proposition ?");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
+            Utils.clearConsole();
             jh.displayResult(tabCombiInput, tabIndice);
             nbBienPlace = pc.getNbBienPlace(tabIndice, nbBienPlace);
         }
@@ -72,6 +78,7 @@ public class Jeu {
         pc.tabBornesMinMax(tabBornes);
         while (!pc.conditionsDeSortie(nbBienPlace,tabCombiInput)) {
             tabIndice = jh.indicesResolution(tabCombiRandom, tabCombiInput);
+            Utils.clearConsole();
             pc.displayResult(tabCombiRandom, tabIndice);
             jh.validationIndices();
             nbBienPlace = jh.getNbBienPlace(tabIndice, nbBienPlace);
@@ -97,13 +104,14 @@ public class Jeu {
         pc.initTabPc(tabCombiRandom2);
         pc.tabBornesMinMax(tabBornes);
 
-        pc.modeDev(tabCombiRandom);
 
         while ((!jh.conditionsDeSortie(nbBienPlace1,tabCombiRandom))&(!pc.conditionsDeSortie(nbBienPlace2,tabCombiInput2)))  {
 
+            pc.modeDev(tabCombiRandom);
             System.out.println("Challenger, votre proposition :");
             jh.combi(tabCombiInput);
             tabIndice = pc.indicesResolution(tabCombiInput, tabCombiRandom);
+            Utils.clearConsole();
             jh.displayResult(tabCombiInput, tabIndice);
             nbBienPlace1 = pc.getNbBienPlace(tabIndice, nbBienPlace);
             System.out.println();

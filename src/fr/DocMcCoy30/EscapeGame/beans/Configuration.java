@@ -7,7 +7,7 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 /**
- *
+ * Classe bean : définit les différents choix de configuration du jeu
  */
 public class Configuration {
 

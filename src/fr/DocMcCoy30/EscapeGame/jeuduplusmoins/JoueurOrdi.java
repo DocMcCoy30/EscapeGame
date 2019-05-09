@@ -6,6 +6,9 @@ import fr.DocMcCoy30.EscapeGame.beans.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Hérite de la classe Joeurs, redéfinit les méthodes abstraites et définit les méthodes et attributs du Joueur Ordinateur
+ */
 public class JoueurOrdi extends Joueurs {
 
     List<Bornes> tabBornes = new ArrayList<>();
@@ -59,7 +62,7 @@ public class JoueurOrdi extends Joueurs {
     /**
      * Initialise une List d'objet qui permet d'enregister les bornes (valeurs min et max) pour chaque chiffre de la proposition de l'ordinateur
      *
-     * @param tabBornes
+     * @param tabBornes : tableau d'objet Bornes (borneMin, borneMax)
      * @return : tableau d'objet Bornes
      */
     public List<Bornes> tabBornesMinMax(List<Bornes> tabBornes) {

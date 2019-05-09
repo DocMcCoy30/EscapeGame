@@ -1,9 +1,13 @@
 package fr.DocMcCoy30.EscapeGame.jeuduplusmoins;
 
 import fr.DocMcCoy30.EscapeGame.beans.Configuration;
+import fr.DocMcCoy30.EscapeGame.utils.Utils;
 
 import java.util.ArrayList;
 
+/**
+ * Définit les méthodes et attributs communs aux joueurs (JoueurHumain et JoueurOrdi)
+ */
 public abstract class Joueurs {
 
     protected Configuration config;
