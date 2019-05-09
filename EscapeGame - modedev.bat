@@ -1,0 +1,1 @@
+java -jar EscapeGame.jar modedev
