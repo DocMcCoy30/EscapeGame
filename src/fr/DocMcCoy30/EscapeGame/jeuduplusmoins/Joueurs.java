@@ -5,7 +5,7 @@ import fr.DocMcCoy30.EscapeGame.beans.Configuration;
 import java.util.ArrayList;
 
 /**
- * Définit les méthodes et attributs communs aux joueurs (JoueurHumain et JoueurOrdi)
+ * Definit les methodes et attributs communs aux joueurs (JoueurHumain et JoueurOrdi)
  */
 public abstract class Joueurs {
 
@@ -23,7 +23,7 @@ public abstract class Joueurs {
     }
 
     /**
-     * Détermine une combinaison (Aleatoire pour JoueurOrdi, Entrée au clavier pour JoueurHumain)
+     * Determine une combinaison (Aleatoire pour JoueurOrdi, Entree au clavier pour JoueurHumain)
      *
      * @param tabCombi : combinaison dans un tableau de chiffre
      * @return tableau de chiffres : combinaison du joueur
@@ -31,16 +31,16 @@ public abstract class Joueurs {
     public abstract ArrayList<Integer> combi(ArrayList<Integer> tabCombi);
 
     /**
-     * Détermine les conditions (victoire ou défaite) pour sortir du jeu
+     * Determine les conditions (victoire ou défaite) pour sortir du jeu
      *
      * @param nbBienPlace : nombre de chiffres correspondants au code secret
      * @param tabCombi : combinaison prise en compte pour évaluer les conditions de sortie : tabCombiRandom pour l'ordinateur, tabCombiInput pour le joueur
-     * @return boolean : true si les conditions de sortie de jeu sont respectées (vistoire ou défaite), false dans le cas contraire
+     * @return boolean : true si les conditions de sortie de jeu sont respectees (vistoire ou défaite), false dans le cas contraire
      */
     public abstract boolean conditionsDeSortie(int nbBienPlace, ArrayList<Integer> tabCombi);
 
     /**
-     * Affiche la combinaison secrete de l'ordinateur quand le mode Developpeur est activé
+     * Affiche la combinaison secrete de l'ordinateur quand le mode Developpeur est active
      *
      * @param tabCombiRandom : combinaison de l'ordinateur à afficher en mode developpeur
      */
@@ -83,7 +83,7 @@ public abstract class Joueurs {
     }
 
     /**
-     * Récupère le nombre de chiffres bien placés après analyse des indices
+     * Recupere le nombre de chiffres bien places apres analyse des indices
      *
      * @param tabIndice : tableau des indices (+,- ou =)
      * @param  nbBienPlace : nombre de chiffres de la proposition correspondants au code secret

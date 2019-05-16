@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Hérite de la classe Joeurs, redéfinit les méthodes abstraites et définit les méthodes et attributs du Joueur Ordinateur
+ * Herite de la classe Joeurs, redefinit les methodes abstraites et definit les méthodes et attributs du Joueur Ordinateur
  */
 public class JoueurOrdi extends Joueurs {
 
@@ -48,7 +48,7 @@ public class JoueurOrdi extends Joueurs {
     }
 
     /**
-     * Determine un chiffre aléatoire compris entre deux bornes
+     * Determine un chiffre aleatoire compris entre deux bornes
      *
      * @param lower  : borne basse
      * @param higher : borne haute
@@ -60,7 +60,7 @@ public class JoueurOrdi extends Joueurs {
     }
 
     /**
-     * Initialise une List d'objet qui permet d'enregister les bornes (valeurs min et max) pour chaque chiffre de la proposition de l'ordinateur
+     * Initialise une List d'objet qui permet d'enregister les bornes min et max pour chaque chiffre de la proposition de l'ordinateur
      *
      * @param tabBornes : tableau d'objet Bornes (borneMin, borneMax)
      * @return : tableau d'objet Bornes
@@ -77,7 +77,7 @@ public class JoueurOrdi extends Joueurs {
     /**
      * Initialise la premiere proposition de l'ordinateur
      *
-     * @param tabCombiRandom : tableau de chiffres : combinaison proposée par l'ordinateur
+     * @param tabCombiRandom : tableau de chiffres : combinaison proposee par l'ordinateur
      * @return : tableau de proposition
      */
     public ArrayList<Integer> initTabPc(ArrayList<Integer> tabCombiRandom) {
@@ -90,11 +90,11 @@ public class JoueurOrdi extends Joueurs {
     }
 
     /**
-     * Analyse des indices (+/- ou =), redéfinit les bornes min et max,
-     * détermine un chiffre aléatoire entre ces deux bornes et effectue une nouvelle proposition
+     * Analyse des indices (+/- ou =), redefinit les bornes min et max,
+     * determine un chiffre aléatoire entre ces deux bornes et effectue une nouvelle proposition
      *
      * @param tabCombiRandom : tableau de chiffres => nouvelle proposition
-     * @param tabIndice      : tableau d'indices après comparaison entre code secret et proposition
+     * @param tabIndice      : tableau d'indices apres comparaison entre code secret et proposition
      * @param tabBornes      : tableau d'objet Bornes
      * @return : nouvelle proposition
      */

@@ -1,7 +1,7 @@
 ﻿Lancement du programme : 
 
 1 - Dans une console :
-	- se positionner dans le répertoire
+	- se positionner dans le répertoire où se trouve le jeu
 	- entrer la ligne de commande : java -jar EscapeGame.jar
 				   ou : java -jar EscapeGame.jar modedev (lancement du jeu en mode developpeur)
 

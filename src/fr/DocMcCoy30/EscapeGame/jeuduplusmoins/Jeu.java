@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Définit les méthodes pour les trois différents modes de jeu
+ * Definit les methodes pour les trois différents modes de jeu
  */
 public class Jeu {
 
@@ -36,7 +36,7 @@ public class Jeu {
     /**
      * Initialise les variables nbBienPlaces
      */
-    public void initNbDejaJoue() {
+    public void initNbBienPlace() {
         nbBienPlace = 0;
         nbBienPlace1 = 0;
         nbBienPlace2 = 0;
@@ -46,12 +46,11 @@ public class Jeu {
      * Jeu en mode challenger
      */
     public void challenger() {
-        initNbDejaJoue();
+        initNbBienPlace();
         jh.initNbDeCoups();
         pc.tabCombiDejaJouees.clear();
         pc.tabIndicesDejaJoues.clear();
         pc.combi(tabCombiRandom);
-        //pc.modeDev(tabCombiRandom);
         while (!jh.conditionsDeSortie(nbBienPlace,tabCombiRandom)) {
             pc.modeDev(tabCombiRandom);
             System.out.println("Proposition ?");
@@ -64,10 +63,10 @@ public class Jeu {
     }
 
     /**
-     * Jeu en mode défenseur
+     * Jeu en mode defenseur
      */
     public void defenseur() {
-        initNbDejaJoue();
+        initNbBienPlace();
         pc.initNbDeCoups();
         pc.tabCombiDejaJouees.clear();
         pc.tabIndicesDejaJoues.clear();
@@ -90,7 +89,7 @@ public class Jeu {
      * Jeu en mode duel
      */
     public void duel() {
-        initNbDejaJoue();
+        initNbBienPlace();
         jh.initNbDeCoups();
         jh.tabCombiDejaJouees.clear();
         jh.tabIndicesDejaJoues.clear();

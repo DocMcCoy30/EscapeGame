@@ -11,7 +11,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Affiche les différents menus du jeu
+ * Affiche les differents menus du jeu
  */
 public class Menu {
 
@@ -33,7 +33,7 @@ public class Menu {
     }
 
     /**
-     * Affiche la présentation du jeu
+     * Affiche la presentation du jeu
      */
     public void presentationJeux() {
         System.out.println();
@@ -59,9 +59,9 @@ public class Menu {
     }
 
     /**
-     * Récupère le choix du joueur dans le menu principal et lance le jeu selectionné
+     * Recupere le choix du joueur dans le menu principal et lance le jeu selectionne
      *
-     * @return : chiffre corrspondant au choix du joueur
+     * @return : chiffre correspondant au choix du joueur
      */
     public int modeChoix() {
         choixMode = 0;
@@ -95,7 +95,7 @@ public class Menu {
     }
 
     /**
-     * Récupère le choix du joueur dans le menu de fin de jeu et lance l'action attendu
+     * Recupere le choix du joueur dans le menu de fin de jeu et lance l'action attendue
      *
      * @return : chiffre correspondant au choix du joueur
      */
@@ -121,7 +121,7 @@ public class Menu {
     }
 
     /**
-     * Lance les actions attendues et selectionnées dans les différents menus
+     * Lance les actions attendues et selectionnees dans les differents menus
      */
     public void runJeuSelectionne() {
         Jeu jeu = new Jeu(config);

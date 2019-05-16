@@ -3,9 +3,9 @@ package fr.DocMcCoy30.EscapeGame;
 public class EscapeGame {
 
     /**
-     * Attribut static pour pouvoir être utilisé dans une méthode static
+     * Attribut static pour pouvoir être utilise dans une methode static
      *
-     * @param args args[0] = moddev => mode developpeur activé
+     * @param args args[0] = moddev => mode developpeur active
      * @author DocMcCoy30
      */
     public static void main(String[] args) {

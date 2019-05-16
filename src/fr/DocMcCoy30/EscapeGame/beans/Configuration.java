@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
- * Classe bean : définit les différents choix de configuration du jeu
+ * Classe bean : definit les différents choix de configuration du jeu
  */
 public class Configuration {
 
@@ -25,7 +25,7 @@ public class Configuration {
     private Boolean modedev;
 
     /**
-     * ouvre un flux, récupère les données du fichier config.properties et ferme le flux
+     * ouvre un flux, recupere les donnees du fichier config.properties et ferme le flux
      *
      * @throws IOException
      */
@@ -67,7 +67,7 @@ public class Configuration {
     }
 
     /**
-     * affiche les données de configuration du jeu
+     * affiche les donnees de configuration du jeu
      */
     public void affiche() {
         System.out.println("Nombre de cases = " + getNbCases());

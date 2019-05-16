@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Hérite de la classe Joeurs, redéfinit les méthodes abstraites et définit les méthodes et attributs du Joueur Humain
+ * Herite de la classe Joeurs, redefinit les methodes abstraites et definit les methodes et attributs du Joueur Humain
  */
 public class JoueurHumain extends Joueurs {
 
@@ -79,14 +79,14 @@ public class JoueurHumain extends Joueurs {
     }
 
     /**
-     * Affiche l'invite d'entrée du code secret du joueur
+     * Affiche l'invite d'entree du code secret du joueur
      */
     public void propositionInitiale() {
         System.out.println("Votre code secret de " + config.getNbCases() + " chiffres compris entre 0 et " + config.getNbDigits() + " ?");
     }
 
     /**
-     * Demande de validation par enter après affichage réponse
+     * Demande de validation par le joueur apres affichage des indices
      */
     public void validationIndices() {
         try {
