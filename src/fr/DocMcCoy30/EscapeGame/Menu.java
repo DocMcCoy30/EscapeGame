@@ -76,6 +76,7 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 log.warn("Saisie choixMode non valide.");
+                sc.nextLine();
             }
         }
         return choixMode;
@@ -111,6 +112,7 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 log.warn("Saisie choixFin non valide.");
+                sc.nextLine();
             }
         }
         return choixFin;
