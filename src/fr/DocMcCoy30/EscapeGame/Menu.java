@@ -76,8 +76,6 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 log.warn("Saisie choixMode non valide.");
-                System.out.println("Votre saisie n'est pas un choix valide.");
-                sc.nextLine();
             }
         }
         return choixMode;
@@ -113,8 +111,6 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 log.warn("Saisie choixFin non valide.");
-                System.out.println("Votre saisie n'est pas un choix valide.");
-                sc.nextLine();
             }
         }
         return choixFin;
